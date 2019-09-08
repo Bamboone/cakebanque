@@ -4,51 +4,60 @@
  * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $users
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Comptes'), ['controller' => 'Comptes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Compte'), ['controller' => 'Comptes', 'action' => 'add']) ?></li>
-    </ul>
+
+<nav class="float-left">
+
+<div class="list-group">
+<?= $this->Html->link(__('Nouveau utilisateur'), ['action' => 'add'], ['class' => 'list-group-item list-group-item-action']) ?>
+<?= $this->Html->link(__('Liste des comptes banquaires'), ['controller' => 'Comptes', 'action' => 'index'], ['class' => 'list-group-item list-group-item-action']) ?>
+<?= $this->Html->link(__('Nouveau compte banquaire'), ['controller' => 'Comptes', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action']) ?>
+</div>
+<br>
+<div class="card border-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">Trier les utilisateurs par</div>
+  <div class="card-body">
+    <div class="list-group">
+          <?= $this->Paginator->sort('id')?>
+          <?= $this->Paginator->sort('name', __('Nom')) ?>
+          <?= $this->Paginator->sort('username', __('Nom d\'utilisateur')) ?>
+          <?= $this->Paginator->sort('email', __('Courriel')) ?>
+          <?= $this->Paginator->sort('password', __('Mot de passe')) ?>
+          <?= $this->Paginator->sort('created', __('Date de création')) ?>
+          <?= $this->Paginator->sort('modified', __('Date de modification')) ?>
+        </div>
+  </div>
+</div>
+
 </nav>
-<div class="users index large-9 medium-8 columns content">
-    <h3><?= __('Users') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('username') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('email') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('password') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('comptes_id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
+<div class="container ">
+
+            <h3>Utilisateurs</h3>
+
             <?php foreach ($users as $user): ?>
-            <tr>
-                <td><?= $this->Number->format($user->id) ?></td>
-                <td><?= h($user->name) ?></td>
-                <td><?= h($user->username) ?></td>
-                <td><?= h($user->email) ?></td>
-                <td><?= h($user->password) ?></td>
-                <td><?= h($user->created) ?></td>
-                <td><?= h($user->modified) ?></td>
-                <td><?= $this->Number->format($user->comptes_id) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
-                </td>
-            </tr>
+            <div class="card border-primary mb-3">
+              <div class="card-header"><?= h($user->name) ?></div>
+              <div class="card-body">
+                <div class="card-text float-left">
+                   <strong>ID: </strong><?= $this->Number->format($user->id) ?> <br>
+                   <strong>Nom d'utilisateur: </strong><?= h($user->username) ?> <br>
+                   <strong>Courriel: </strong><?= h($user->email) ?> <br>
+                   <strong>Mot de passe: </strong><?= h($user->password) ?> <br>
+                   <strong>Date de création: </strong><?= h($user->created) ?> <br>
+                   <strong>Date de modification: </strong><?= h($user->modified) ?> <br>
+                </div>
+                <div class="float-right">
+                    <div class="list-group">
+                        <?= $this->Html->link(__('Consulter'), ['action' => 'view', $user->id], ['class' => 'list-group-item list-group-item-action text-white bg-primary']) ?>
+                        <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $user->id], ['class' => 'list-group-item list-group-item-action text-white bg-success']) ?>
+                        <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $user->id], ['class' => 'list-group-item list-group-item-action text-white bg-danger'], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
+                    </div>
+                </div>
+              </div>
+            </div>
+
             <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
+
+    <div>
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
             <?= $this->Paginator->prev('< ' . __('previous')) ?>

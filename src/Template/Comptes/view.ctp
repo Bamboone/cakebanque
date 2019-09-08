@@ -31,10 +31,6 @@
             <td><?= $this->Number->format($compte->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('User Id') ?></th>
-            <td><?= $this->Number->format($compte->user_id) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Date') ?></th>
             <td><?= h($compte->date) ?></td>
         </tr>
@@ -59,7 +55,6 @@
                 <th scope="col"><?= __('Password') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col"><?= __('Comptes Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($compte->users as $users): ?>
@@ -71,7 +66,6 @@
                 <td><?= h($users->password) ?></td>
                 <td><?= h($users->created) ?></td>
                 <td><?= h($users->modified) ?></td>
-                <td><?= h($users->comptes_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Users', 'action' => 'view', $users->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Users', 'action' => 'edit', $users->id]) ?>

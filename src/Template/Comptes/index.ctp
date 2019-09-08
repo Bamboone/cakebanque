@@ -23,7 +23,6 @@
                 <th scope="col"><?= $this->Paginator->sort('image') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -36,7 +35,6 @@
                 <td><?= h($compte->image) ?></td>
                 <td><?= h($compte->created) ?></td>
                 <td><?= h($compte->modified) ?></td>
-                <td><?= $this->Number->format($compte->user_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $compte->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $compte->id]) ?>

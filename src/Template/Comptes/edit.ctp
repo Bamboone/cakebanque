@@ -26,7 +26,6 @@
             echo $this->Form->control('type_compte');
             echo $this->Form->control('date', [ 'minYear' => 1900, 'maxYear' => date('Y') ]);
             echo $this->Form->control('image');
-            echo $this->Form->control('user_id');
             echo $this->Form->control('users._ids', ['options' => $users]);
         ?>
     </fieldset>

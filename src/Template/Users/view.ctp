@@ -39,10 +39,6 @@
             <td><?= $this->Number->format($user->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Comptes Id') ?></th>
-            <td><?= $this->Number->format($user->comptes_id) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Created') ?></th>
             <td><?= h($user->created) ?></td>
         </tr>
@@ -62,7 +58,6 @@
                 <th scope="col"><?= __('Image') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col"><?= __('User Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($user->comptes as $comptes): ?>
@@ -73,7 +68,6 @@
                 <td><?= h($comptes->image) ?></td>
                 <td><?= h($comptes->created) ?></td>
                 <td><?= h($comptes->modified) ?></td>
-                <td><?= h($comptes->user_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Comptes', 'action' => 'view', $comptes->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Comptes', 'action' => 'edit', $comptes->id]) ?>

@@ -27,7 +27,6 @@
             echo $this->Form->control('username');
             echo $this->Form->control('email');
             echo $this->Form->control('password');
-            echo $this->Form->control('comptes_id');
             echo $this->Form->control('comptes._ids', ['options' => $comptes]);
         ?>
     </fieldset>

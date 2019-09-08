@@ -20,7 +20,7 @@ class ComptesController extends AppController
     public function index()
     {
 
-        $requete = $this->Comptes->find('all') -> contain(['Users']);
+        $requete = $this->Comptes->find('all') -> contain(['users']) -> where([user_id => $this->Auth->user('id')]);
         $comptes = $this->paginate($requete);
         $this->set(compact('comptes'));
     }

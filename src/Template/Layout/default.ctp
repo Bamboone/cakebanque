@@ -27,6 +27,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->css('bootstrap') ?>
+    <?= $this->Html->css('simple-sidebar') ?>
     <?= $this->Html->script('jquery-3.4.1.js') ?>
     <?= $this->Html->script('bootstrap.js') ?>
 
@@ -35,7 +36,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('script') ?>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
     <a class="navbar-brand" href="#">Banque Web</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -55,23 +56,25 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <li class="nav-item">
                 <a class="nav-link" href="#">Versement</a>
             </li>
+
         </ul>
-        <button class="btn btn-secondary mr-2" type="submit">
-            <?php
-                echo $this->Html->link('Créer un compte', ['controller' => 'Users', 'action' => 'add']);
-            ?>
-        </button>
-        <button class="btn btn-secondary">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+                                     <?php
+                                                    echo $this->Html->link('Créer un compte', ['controller' => 'Users', 'action' => 'add'], ['class' => 'nav-link']);
+                                                ?>
+                                </li>
+        <li class="nav-item">
         <?php
         $loguser = $this->request->session()->read('Auth.User');
         if ($loguser) {
-            $user = $loguser['email'];
-            echo $this->Html->link($user . ' Déconnecter', ['controller' => 'Users', 'action' => 'logout']);
+            $user = $loguser['name'];
+            echo $this->Html->link($user . ' Déconnecter', ['controller' => 'Users', 'action' => 'logout'], ['class' => 'nav-link']);
         } else {
-            echo $this->Html->link('Connecter', ['controller' => 'Users', 'action' => 'login']);
+            echo $this->Html->link('Connecter', ['controller' => 'Users', 'action' => 'login'], ['class' => 'nav-link']);
         }
         ?>
-        </button>
+        </li>
 
 
 
@@ -80,7 +83,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 
 
-<div class="container">
+<div>
     <?= $this->Flash->render() ?>
     <?= $this->fetch('content') ?>
 </div>
