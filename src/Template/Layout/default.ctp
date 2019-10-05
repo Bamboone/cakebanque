@@ -14,6 +14,8 @@
  */
 
 $cakeDescription = 'CakePHP: the rapid development php framework';
+use Cake\I18n\I18n;
+$loguser = $this->request->getSession()->read('Auth.User');
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +29,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->css('bootstrap') ?>
-    <?= $this->Html->css('simple-sidebar') ?>
     <?= $this->Html->script('jquery-3.4.1.js') ?>
     <?= $this->Html->script('bootstrap.js') ?>
 
@@ -38,43 +39,73 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
     <a class="navbar-brand" href="#">Banque Web</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarColor01">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <?= $this->Html->link(__('Comptes banquaires'), ['controller' => 'Comptes', 'action' => 'index'], ['class' => 'nav-link']);?>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Comptes</a>
+                <?= $this->Html->link(__('Messages'), ['controller' => 'Messages', 'action' => 'index'], ['class' => 'nav-link']);?>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Transactions</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Versement</a>
-            </li>
+
+                <?php
+                if ($loguser['role'] === 'admin') {
+                    echo '<li class="nav-item">';
+                    echo $this->Html->link(__('Transactions'), ['controller' => 'Transactions', 'action' => 'index'], ['class' => 'nav-link']);
+                    echo '</li>';
+                    echo '<li class="nav-item">';
+                    echo $this->Html->link(__('Images'), ['controller' => 'Files', 'action' => 'index'], ['class' => 'nav-link']);
+                    echo '</li>';
+                }
+                ?>
+
+
 
         </ul>
         <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-                                     <?php
-                                                    echo $this->Html->link('Créer un compte', ['controller' => 'Users', 'action' => 'add'], ['class' => 'nav-link']);
-                                                ?>
-                                </li>
-        <li class="nav-item">
-        <?php
-        $loguser = $this->request->session()->read('Auth.User');
-        if ($loguser) {
-            $user = $loguser['name'];
-            echo $this->Html->link($user . ' Déconnecter', ['controller' => 'Users', 'action' => 'logout'], ['class' => 'nav-link']);
-        } else {
-            echo $this->Html->link('Connecter', ['controller' => 'Users', 'action' => 'login'], ['class' => 'nav-link']);
-        }
-        ?>
-        </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php
+                    if (I18n::getLocale() == 'en_US'){
+                        echo 'English';
+                    }else if(I18n::getLocale() == 'fr_CA'){
+                        echo 'Français';
+                    }else{
+                        echo '普通话';
+                    }
+                    ?>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <?= $this->Html->link('Français', ['action' => 'changeLang', 'fr_CA'], ['class' => 'dropdown-item'], ['escape' => false]) ?>
+                    <?= $this->Html->link('English', ['action' => 'changeLang', 'en_US'], ['class' => 'dropdown-item'], ['escape' => false]) ?>
+                    <?= $this->Html->link('普通话', ['action' => 'changeLang', 'zh_CN'], ['class' => 'dropdown-item'], ['escape' => false]) ?>
+                </div>
+            </li>
+            <li class="nav-item">
+                <?php
+                if ($loguser) {
+                    $user = $loguser['name'];
+                    $userId = $loguser['id'];
+                    echo $this->Html->link($user, ['controller' => 'Users', 'action' => 'view', $userId], ['class' => 'nav-link']);
+                } else {
+                    echo $this->Html->link(__('Créer un compte'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'nav-link']);
+                }
+                ?>
+
+            </li>
+            <li class="nav-item">
+                <?php
+                if ($loguser) {
+                    echo $this->Html->link(__(' Déconnecter'), ['controller' => 'Users', 'action' => 'logout'], ['class' => 'nav-link']);
+                } else {
+                    echo $this->Html->link(__('Connecter'), ['controller' => 'Users', 'action' => 'login'], ['class' => 'nav-link']);
+                }
+                ?>
+            </li>
+        </ul>
 
 
 

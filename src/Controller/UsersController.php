@@ -51,14 +51,13 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('L\'utilisateur a été sauvegardé.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'login']);
             }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            $this->Flash->error(__('L\'utilisateur n\'a pas pu être sauvegardé, veuillez réessayer.'));
         }
-        $comptes = $this->Users->Comptes->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'comptes'));
+        $this->set(compact('user'));
     }
 
     /**
@@ -76,11 +75,11 @@ class UsersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('L\'utilisateur a été sauvegardé.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            $this->Flash->error(__('L\'utilisateur n\'a pas pu être sauvegardé, veuillez réessayer.'));
         }
         $comptes = $this->Users->Comptes->find('list', ['limit' => 200]);
         $this->set(compact('user', 'comptes'));
@@ -98,9 +97,10 @@ class UsersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
         if ($this->Users->delete($user)) {
-            $this->Flash->success(__('The user has been deleted.'));
+            $this->Flash->success(__('L\'utilisateur a été supprimé.'));
+            $this->logout();
         } else {
-            $this->Flash->error(__('The user could not be deleted. Please, try again.'));
+            $this->Flash->error(__('L\'utilisateur n\'a pas pu être supprimé, veuillez réessayer.'));
         }
 
         return $this->redirect(['action' => 'index']);
@@ -114,19 +114,40 @@ class UsersController extends AppController
                 $this->Auth->setUser($user);
                 return $this->redirect($this->Auth->redirectUrl());
             }
-            $this->Flash->error('Votre identifiant ou votre mot de passe est incorrect');
+            $this->Flash->error(__('Votre identifiant ou votre mot de passe est incorrect'));
         }
     }
 
     public function initialize()
     {
         parent::initialize();
-        $this->Auth->allow(['logout', 'add']);
+        $this->Auth->allow(['logout']);
+        $user_id = $this->Auth->user('id');
+        if($user_id == null){
+            $this->Auth->allow(['add']);
+        }
     }
 
     public function logout()
     {
-        $this->Flash->success('Vous avez été déconnecté.');
+        $this->Flash->success(__('Vous avez été déconnecté.'));
         return $this->redirect($this->Auth->logout());
+    }
+
+    public function isAuthorized($user)
+    {
+        if($user['role'] === 'admin'){
+            return true;
+        }else{
+            $action = $this->request->getParam('action');
+            $id = $this->request->getParam('pass.0');
+            if (in_array($action, ['index', 'add']) ||  in_array($action, ['view']) && $user['id'] != $id) {
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+
     }
 }

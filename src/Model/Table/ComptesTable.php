@@ -6,6 +6,7 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
+
 /**
  * Comptes Model
  *
@@ -40,16 +41,19 @@ class ComptesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('Translate', ['fields' => ['nom', 'type_compte'], 'allowEmptyTranslations' =>false]);
 
-        $this->belongsTo('Users', [
-            'foreignKey' => 'user_id',
-            'joinType' => 'INNER'
-        ]);
         $this->belongsToMany('Users', [
             'foreignKey' => 'compte_id',
             'targetForeignKey' => 'user_id',
             'joinTable' => 'users_comptes'
         ]);
+
+        $this->belongsTo('Files', [
+            'foreignKey' => 'file_id'
+        ]);
+
+        $this->hasMany('Transactions');
     }
 
     /**
@@ -71,9 +75,10 @@ class ComptesTable extends Table
             ->notEmptyString('type_compte');
 
         $validator
-            ->date('date')
-            ->requirePresence('date', 'create')
-            ->notEmptyDate('date');
+            ->scalar('nom')
+            ->maxLength('nom', 255)
+            ->requirePresence('nom', 'create')
+            ->notEmptyString('nom');
 
         $validator
             ->scalar('image')
@@ -97,9 +102,4 @@ class ComptesTable extends Table
         return $rules;
     }
 
-    public function findOwnedBy(Query $query, array $options)
-    {
-        $user = $options['user'];
-        return $query->where(['user_id' => $user->id]);
-    }
 }

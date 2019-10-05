@@ -16,6 +16,8 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\I18n\I18n;
+
 
 /**
  * Application Controller
@@ -41,12 +43,15 @@ class AppController extends Controller
     {
         parent::initialize();
 
+        I18n::setLocale($this->request->session()->read('Config.language'));
+
         $this->loadComponent('RequestHandler', [
             'enableBeforeRedirect' => false,
         ]);
         $this->loadComponent('Flash');
 
         $this->loadComponent('Auth', [
+            'authorize'=> 'Controller',
             'authenticate' => [
                 'Form' => [
                     'fields' => [
@@ -59,9 +64,12 @@ class AppController extends Controller
                 'controller' => 'Users',
                 'action' => 'login'
             ],
+
             // Si pas autorisé, on renvoit sur la page de login
             'unauthorizedRedirect' => $this->referer(['controller' => 'Users', 'action' => 'login'])
+
         ]);
+        $this->Auth->allow(['controller' => 'App', 'action' => 'changelang']);
 
 
 
@@ -70,5 +78,17 @@ class AppController extends Controller
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
          */
         //$this->loadComponent('Security');
+    }
+
+    public function isAuthorized($user)
+    {
+        // Par défaut, on refuse l'accès.
+        return false;
+    }
+
+    public function changeLang($lang = 'en_US') {
+        I18n::setLocale($lang);
+        $this->request->session()->write('Config.language', $lang);
+        return $this->redirect($this->request->referer());
     }
 }

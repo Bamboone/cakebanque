@@ -34,9 +34,9 @@ class User extends Entity
         'username' => true,
         'email' => true,
         'password' => true,
+        'sexe' => true,
         'created' => true,
         'modified' => true,
-        'comptes_id' => true,
         'comptes' => true
     ];
 

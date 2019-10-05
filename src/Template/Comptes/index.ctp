@@ -3,55 +3,68 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Compte[]|\Cake\Collection\CollectionInterface $comptes
  */
+use Cake\I18n\Number;
+$loguser = $this->request->getSession()->read('Auth.User');
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Compte'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-    </ul>
+
+<nav class="float-left" style="max-width: 20rem;">
+
+    <div class="list-group m-3">
+        <?= $this->Html->link(__('Créer un nouveau compte banquaire'), ['action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
+        <?php
+        if($loguser['role'] === 'admin'){
+            echo $this->Html->link(__('Consulter la liste des utilisateurs'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
+            echo $this->Html->link(__('Ajouter un utilisateur'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
+        }
+        ?>
+        <?= $this->Html->link(__('Ajouter une image de compte'), ['controller' => 'Files', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
+    </div>
+    <br>
+    <div class="card border-secondary m-3" style="max-width: 20rem;">
+        <div class="card-header"><?=__('Trier les comptes par')?></div>
+        <div class="card-body">
+            <div class="list-group">
+                <?= $this->Paginator->sort('nom', __('Nom de compte')) ?>
+                <?= $this->Paginator->sort('type_compte', __('Type de compte')) ?>
+                <?= $this->Paginator->sort('created', __('Date de création')) ?>
+                <?= $this->Paginator->sort('modified', __('Date de modification')) ?>
+            </div>
+        </div>
+    </div>
+
 </nav>
-<div class="comptes index large-9 medium-8 columns content">
-    <h3><?= __('Comptes') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('type_compte') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('date') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('image') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($comptes as $compte): ?>
-            <tr>
-                <td><?= $this->Number->format($compte->id) ?></td>
-                <td><?= h($compte->type_compte) ?></td>
-                <td><?= h($compte->date) ?></td>
-                <td><?= h($compte->image) ?></td>
-                <td><?= h($compte->created) ?></td>
-                <td><?= h($compte->modified) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $compte->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $compte->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $compte->id], ['confirm' => __('Are you sure you want to delete # {0}?', $compte->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
+<div class="container ">
+    <br>
+    <h3><?=__('Comptes')?></h3>
+
+
+    <?php foreach ($comptes as $compte): ?>
+        <div class="card border-primary mb-3">
+            <div class="card-header"><h4><?= h($compte->nom) ?></h4></div>
+            <div class="card-body">
+                <div class="card-text float-left">
+                    <strong><?=__('Type de compte') ?>: </strong><?= h($compte->type_compte) ?> <br>
+                    <strong><?=__('Balance') ?>: </strong><?= Number::currency(h($compte->balance), null, ['places' => 2]) ?> <br>
+                </div>
+                <div class="list-group list-group-horizontal float-right">
+                    <?= $this->Html->link(__('Consulter'), ['action' => 'view', $compte->id], ['class' => 'list-group-item list-group-item-action text-white bg-primary']) ?>
+                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $compte->id], ['class' => 'list-group-item list-group-item-action text-white bg-success']) ?>
+                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $compte->id], ['class' => 'list-group-item list-group-item-action text-white bg-danger', 'confirm' => __('Voulez vous vraiment supprimer le compte # {0}?', $compte->id)]) ?>
+                </div>
+            </div>
+        </div>
+
+    <?php endforeach; ?>
+
+    <div>
         <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->first('<< ' . __('Debut')) ?>
+            <?= $this->Paginator->prev('< ' . __('Précédent')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
+            <?= $this->Paginator->next(__('Suivant') . ' >') ?>
+            <?= $this->Paginator->last(__('Dernier') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} de {{pages}}, {{current}} entrée(s) montrée(s) sur un total de {{count}}')]) ?></p>
     </div>
 </div>
+

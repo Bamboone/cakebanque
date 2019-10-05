@@ -3,79 +3,57 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\User $user
  */
+$loguser = $this->request->getSession()->read('Auth.User');
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Comptes'), ['controller' => 'Comptes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Compte'), ['controller' => 'Comptes', 'action' => 'add']) ?> </li>
-    </ul>
+<nav class="float-left" style="max-width: 20rem;">
+
+    <div class="list-group m-3">
+        <?= $this->Html->link(__('Modifier l\'utilisateur'), ['action' => 'edit', $user->id], ['class' => 'list-group-item list-group-item-action bg-success text-white']) ?>
+        <?= $this->Form->postLink(
+            __('Supprimer l\'utilisateur'),
+            ['action' => 'delete', $user->id], ['class' => 'list-group-item list-group-item-action bg-danger text-white', 'confirm' => __('Voulez vous vraiment supprimer l\'utilisateur # {0}?', $user->id)]
+        )
+        ?>
+        <?php
+        if($loguser['role'] === 'admin'){
+            echo $this->Html->link(__('Consulter la liste des utilisateurs'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
+            echo $this->Html->link(__('Ajouter un utilisateur'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
+        }
+        ?>
+        <?= $this->Html->link(__('Consulter la liste des comptes banquaires'), ['controller' => 'Comptes', 'action' => 'index'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
+        <?= $this->Html->link(__('Ajouter un nouveau compte banquaire'), ['controller' => 'Comptes', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
+    </div>
+
 </nav>
-<div class="users view large-9 medium-8 columns content">
-    <h3><?= h($user->name) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Name') ?></th>
-            <td><?= h($user->name) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Username') ?></th>
-            <td><?= h($user->username) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Email') ?></th>
-            <td><?= h($user->email) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Password') ?></th>
-            <td><?= h($user->password) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($user->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Created') ?></th>
-            <td><?= h($user->created) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Modified') ?></th>
-            <td><?= h($user->modified) ?></td>
-        </tr>
-    </table>
-    <div class="related">
-        <h4><?= __('Related Comptes') ?></h4>
-        <?php if (!empty($user->comptes)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Type Compte') ?></th>
-                <th scope="col"><?= __('Date') ?></th>
-                <th scope="col"><?= __('Image') ?></th>
-                <th scope="col"><?= __('Created') ?></th>
-                <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($user->comptes as $comptes): ?>
-            <tr>
-                <td><?= h($comptes->id) ?></td>
-                <td><?= h($comptes->type_compte) ?></td>
-                <td><?= h($comptes->date) ?></td>
-                <td><?= h($comptes->image) ?></td>
-                <td><?= h($comptes->created) ?></td>
-                <td><?= h($comptes->modified) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Comptes', 'action' => 'view', $comptes->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Comptes', 'action' => 'edit', $comptes->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Comptes', 'action' => 'delete', $comptes->id], ['confirm' => __('Are you sure you want to delete # {0}?', $comptes->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
+
+<div class="container">
+    <div class="card border-primary mb-3 mt-3">
+        <h4 class="card-header"><?= h($user->name) ?></h4>
+        <div class="card-body">
+            <div class="card-text float-left">
+                <strong><?=__('Nom d\'utilisateur')?>: </strong><?= h($user->username) ?> <br>
+                <strong><?=__('Courriel')?>: </strong><?= h($user->email) ?> <br>
+                <strong><?=__('Sexe')?>: </strong><?= h($user->sexe) ?> <br>
+                <hr>
+                <h5 class="card-title mt-3"><?= __('Comptes reliés')?></h5>
+                <?php foreach ($user->comptes as $comptes): ?>
+                <div>
+                    <strong class="m-3" ><?= h($comptes->nom) ?></strong>
+                    <div class="list-group list-group-horizontal m-3">
+                        <?= $this->Html->link(__('Consulter'), ['controller' => 'Comptes', 'action' => 'view', $comptes->id], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
+                        <?= $this->Html->link(__('Modifier'), ['controller' => 'Comptes', 'action' => 'edit', $comptes->id], ['class' => 'list-group-item list-group-item-action bg-success text-white']) ?>
+                        <?= $this->Form->postLink(__('Supprimer'), ['controller' => 'Comptes', 'action' => 'delete', $comptes->id], ['class' => 'list-group-item list-group-item-action bg-danger text-white', 'confirm' => __('Voulez vous vraiment supprimer l\'utilisateur # {0}?', $comptes->id)]) ?>
+                    </div>
+                </div>
+
+                <br>
+
+
+                <?php endforeach; ?>
+
+            </div>
+
+        </div>
     </div>
 </div>
+

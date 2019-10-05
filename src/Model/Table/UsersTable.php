@@ -42,16 +42,18 @@ class UsersTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsTo('Comptes', [
-            'foreignKey' => 'comptes_id'
-        ]);
-        $this->hasMany('Comptes', [
-            'foreignKey' => 'user_id'
-        ]);
         $this->belongsToMany('Comptes', [
             'foreignKey' => 'user_id',
             'targetForeignKey' => 'compte_id',
             'joinTable' => 'users_comptes'
+        ]);
+
+        $this->addBehavior('Translate', ['fields' => ['sexe'], 'allowEmptyTranslations' =>false]);
+
+        $this->belongsToMany('Messages', [
+            'foreignKey' => 'user_id',
+            'targetForeignKey' => 'message_id',
+            'joinTable' => 'users_messages'
         ]);
     }
 
@@ -85,8 +87,15 @@ class UsersTable extends Table
             ->notEmptyString('email');
 
         $validator
+            ->scalar('sexe')
+            ->maxLength('sexe', 255)
+            ->requirePresence('sexe', 'create')
+            ->notEmptyString('sexe');
+
+        $validator
             ->scalar('password')
             ->maxLength('password', 255)
+            ->minLength('password', 5, __('Le mot de passe doit contenir au moins 5 caractères'))
             ->requirePresence('password', 'create')
             ->notEmptyString('password');
 

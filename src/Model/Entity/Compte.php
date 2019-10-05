@@ -29,11 +29,13 @@ class Compte extends Entity
      */
     protected $_accessible = [
         'type_compte' => true,
-        'date' => true,
+        'nom' => true,
+        'balance' => false,
         'image' => true,
         'created' => true,
         'modified' => true,
-        'user_id' => true,
-        'users' => true
+        'users' => true,
+        'file_id' => true
     ];
+
 }
