@@ -1,0 +1,634 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-09-12 16:19+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/ComptesController.php:61
+#: Controller/ComptesController.php:87
+msgid "Le compte a été sauvegardé."
+msgstr ""
+
+#: Controller/ComptesController.php:65
+#: Controller/ComptesController.php:91
+msgid "Le compte n'a pas pu être sauvegardé, veuillez réessayer."
+msgstr ""
+
+#: Controller/ComptesController.php:109
+msgid "Le compte a été supprimé."
+msgstr ""
+
+#: Controller/ComptesController.php:111
+msgid "Le compte n'a pas pu être supprimé, veuillez réessayer."
+msgstr ""
+
+#: Controller/UsersController.php:54
+#: Controller/UsersController.php:78
+msgid "L'utilisateur a été sauvegardé."
+msgstr ""
+
+#: Controller/UsersController.php:58
+#: Controller/UsersController.php:82
+msgid "L'utilisateur n'a pas pu être sauvegardé, veuillez réessayer."
+msgstr ""
+
+#: Controller/UsersController.php:100
+msgid "L'utilisateur a été supprimé."
+msgstr ""
+
+#: Controller/UsersController.php:102
+msgid "L'utilisateur n'a pas pu être supprimé, veuillez réessayer."
+msgstr ""
+
+#: Controller/UsersController.php:116
+msgid "Votre identifiant ou votre mot de passe est incorrect"
+msgstr ""
+
+#: Controller/UsersController.php:128
+msgid "Vous avez été déconnecté."
+msgstr ""
+
+#: Template/Comptes/add.ctp:10
+#: Template/Comptes/edit.ctp:16
+#: Template/Comptes/view.ctp:17
+#: Template/Users/add.ctp:10
+#: Template/Users/edit.ctp:17
+#: Template/Users/index.ctp:12
+#: Template/Users/view.ctp:19
+msgid "Consulter la liste des comptes banquaires"
+msgstr ""
+
+#: Template/Comptes/add.ctp:11
+#: Template/Comptes/edit.ctp:17
+#: Template/Comptes/index.ctp:11
+#: Template/Comptes/view.ctp:19
+#: Template/Users/add.ctp:11
+#: Template/Users/edit.ctp:16
+#: Template/Users/view.ctp:17
+msgid "Consulter la liste des utilisateurs"
+msgstr ""
+
+#: Template/Comptes/add.ctp:12
+#: Template/Comptes/edit.ctp:18
+#: Template/Comptes/index.ctp:12
+#: Template/Comptes/view.ctp:20
+#: Template/Users/add.ctp:20
+#: Template/Users/index.ctp:11
+#: Template/Users/view.ctp:18
+msgid "Ajouter un utilisateur"
+msgstr ""
+
+#: Template/Comptes/add.ctp:19
+msgid "Ajouter un compte banquaire"
+msgstr ""
+
+#: Template/Comptes/add.ctp:21
+#: Template/Comptes/edit.ctp:28
+#: Template/Comptes/index.ctp:21
+#: Template/Comptes/index.ctp:39
+#: Template/Comptes/view.ctp:30
+msgid "Type de compte"
+msgstr ""
+
+#: Template/Comptes/add.ctp:22
+#: Template/Comptes/edit.ctp:29
+msgid "Nom du compte"
+msgstr ""
+
+#: Template/Comptes/add.ctp:25
+#: Template/Users/index.ctp:30
+msgid "Utilisateurs"
+msgstr ""
+
+#: Template/Comptes/add.ctp:28
+#: Template/Comptes/edit.ctp:34
+#: Template/Users/add.ctp:28
+#: Template/Users/edit.ctp:33
+msgid "Soumettre"
+msgstr ""
+
+#: Template/Comptes/edit.ctp:11
+msgid "Supprimer le compte"
+msgstr ""
+
+#: Template/Comptes/edit.ctp:13
+#: Template/Comptes/index.ctp:46
+#: Template/Comptes/view.ctp:14
+#: Template/Comptes/view.ctp:41
+#: Template/Users/edit.ctp:13
+#: Template/Users/index.ctp:44
+#: Template/Users/view.ctp:14
+#: Template/Users/view.ctp:40
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/Comptes/edit.ctp:26
+msgid "Modifier Compte"
+msgstr ""
+
+#: Template/Comptes/edit.ctp:31
+#: Template/Comptes/view.ctp:35
+msgid "Utilisateurs reliés"
+msgstr ""
+
+#: Template/Comptes/index.ctp:10
+#: Template/Users/index.ctp:13
+msgid "Créer un nouveau compte banquaire"
+msgstr ""
+
+#: Template/Comptes/index.ctp:16
+msgid "Trier les comptes par"
+msgstr ""
+
+#: Template/Comptes/index.ctp:19
+msgid "Nom de compte"
+msgstr ""
+
+#: Template/Comptes/index.ctp:22
+#: Template/Comptes/index.ctp:41
+#: Template/Comptes/view.ctp:32
+msgid "Date de création"
+msgstr ""
+
+#: Template/Comptes/index.ctp:23
+#: Template/Comptes/view.ctp:33
+msgid "Date de modification"
+msgstr ""
+
+#: Template/Comptes/index.ctp:31
+msgid "Comptes"
+msgstr ""
+
+#: Template/Comptes/index.ctp:44
+#: Template/Comptes/view.ctp:39
+#: Template/Users/index.ctp:42
+#: Template/Users/view.ctp:38
+msgid "Consulter"
+msgstr ""
+
+#: Template/Comptes/index.ctp:45
+#: Template/Comptes/view.ctp:40
+#: Template/Users/index.ctp:43
+#: Template/Users/view.ctp:39
+msgid "Modifier"
+msgstr ""
+
+#: Template/Comptes/index.ctp:46
+#: Template/Comptes/view.ctp:41
+#: Template/Users/index.ctp:44
+#: Template/Users/view.ctp:40
+msgid "Supprimer"
+msgstr ""
+
+#: Template/Comptes/index.ctp:55
+#: Template/Users/index.ctp:54
+msgid "Debut"
+msgstr ""
+
+#: Template/Comptes/index.ctp:56
+#: Template/Users/index.ctp:55
+msgid "Précédent"
+msgstr ""
+
+#: Template/Comptes/index.ctp:58
+#: Template/Users/index.ctp:57
+msgid "Suivant"
+msgstr ""
+
+#: Template/Comptes/index.ctp:59
+#: Template/Users/index.ctp:58
+msgid "Dernier"
+msgstr ""
+
+#: Template/Comptes/index.ctp:61
+#: Template/Users/index.ctp:60
+msgid "Page {{page}} de {{pages}}, {{current}} entrée(s) montrée(s) sur un total de {{count}}"
+msgstr ""
+
+#: Template/Comptes/view.ctp:10
+msgid "Modifier le compte banquaire"
+msgstr ""
+
+#: Template/Comptes/view.ctp:12
+msgid "Supprimer le compte banquaire"
+msgstr ""
+
+#: Template/Comptes/view.ctp:18
+#: Template/Users/add.ctp:12
+#: Template/Users/edit.ctp:18
+#: Template/Users/view.ctp:20
+msgid "Ajouter un nouveau compte banquaire"
+msgstr ""
+
+#: Template/Layout/default.ctp:47
+msgid "Comptes banquaires"
+msgstr ""
+
+#: Template/Layout/default.ctp:50
+msgid "Transactions"
+msgstr ""
+
+#: Template/Layout/default.ctp:53
+msgid "Versement"
+msgstr ""
+
+#: Template/Layout/default.ctp:70
+msgid "Mon compte utilisateur"
+msgstr ""
+
+#: Template/Layout/default.ctp:72
+msgid "Créer un compte"
+msgstr ""
+
+#: Template/Layout/default.ctp:82
+msgid " Déconnecter"
+msgstr ""
+
+#: Template/Layout/default.ctp:84
+msgid "Connecter"
+msgstr ""
+
+#: Template/Layout/error.ctp:35
+#: Template/Error/error400.ctp:36
+#: Template/Error/error500.ctp:41
+msgid "Error"
+msgstr ""
+
+#: Template/Layout/error.ctp:43
+msgid "Back"
+msgstr ""
+
+#: Template/Users/add.ctp:22
+#: Template/Users/edit.ctp:27
+#: Template/Users/index.ctp:20
+msgid "Nom"
+msgstr ""
+
+#: Template/Users/add.ctp:23
+#: Template/Users/edit.ctp:28
+#: Template/Users/index.ctp:21
+#: Template/Users/index.ctp:37
+#: Template/Users/view.ctp:30
+msgid "Nom d'utilisateur"
+msgstr ""
+
+#: Template/Users/add.ctp:24
+#: Template/Users/edit.ctp:29
+msgid "Adresse courriel"
+msgstr ""
+
+#: Template/Users/add.ctp:25
+#: Template/Users/edit.ctp:30
+#: Template/Users/login.ctp:5
+msgid "Mot de passe"
+msgstr ""
+
+#: Template/Users/edit.ctp:11
+#: Template/Users/view.ctp:12
+msgid "Supprimer l'utilisateur"
+msgstr ""
+
+#: Template/Users/edit.ctp:25
+msgid "Modifier un utilisateur"
+msgstr ""
+
+#: Template/Users/index.ctp:17
+msgid "Trier les utilisateurs par"
+msgstr ""
+
+#: Template/Users/index.ctp:22
+#: Template/Users/index.ctp:38
+#: Template/Users/login.ctp:4
+#: Template/Users/view.ctp:31
+msgid "Courriel"
+msgstr ""
+
+#: Template/Users/login.ctp:2
+#: Template/Users/login.ctp:6
+msgid "Connexion"
+msgstr ""
+
+#: Template/Users/view.ctp:10
+msgid "Modifier l'utilisateur"
+msgstr ""
+
+#: Template/Users/view.ctp:33
+msgid "Comptes reliés"
+msgstr ""
+
+#: View/Helper/PaginatorHelper.php:1258
+msgid "View"
+msgstr ""
+
+#: Template/Error/error400.ctp:37
+msgid "The requested address {0} was not found on this server."
+msgstr ""
+
+#: Template/Error/error500.ctp:39
+msgid "An Internal Error Has Occurred"
+msgstr ""
+
+#: Controller/Component/AuthComponent.php:500
+msgid "Vous n'avez pas accès à cet endroit."
+msgstr ""
+
+#: Controller/Component/CsrfComponent.php:182
+#: Http/Middleware/CsrfProtectionMiddleware.php:227
+msgid "Missing CSRF token cookie"
+msgstr ""
+
+#: Controller/Component/CsrfComponent.php:186
+#: Http/Middleware/CsrfProtectionMiddleware.php:231
+msgid "CSRF token mismatch."
+msgstr ""
+
+#: Error/ExceptionRenderer.php:301
+msgid "Not Found"
+msgstr ""
+
+#: Error/ExceptionRenderer.php:303
+msgid "An Internal Error Has Occurred."
+msgstr ""
+
+#: Http/Response.php:2653
+msgid "The requested file contains `..` and will not be read."
+msgstr ""
+
+#: Http/Response.php:2674
+msgid "The requested file was not found"
+msgstr ""
+
+#: I18n/Number.php:90
+msgid "{0,number,#,###.##} KB"
+msgstr ""
+
+#: I18n/Number.php:92
+msgid "{0,number,#,###.##} MB"
+msgstr ""
+
+#: I18n/Number.php:94
+msgid "{0,number,#,###.##} GB"
+msgstr ""
+
+#: I18n/Number.php:96
+msgid "{0,number,#,###.##} TB"
+msgstr ""
+
+#: I18n/Number.php:88
+msgid "{0,number,integer} Byte"
+msgid_plural "{0,number,integer} Bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:80
+msgid "{0} from now"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:80
+msgid "{0} ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:83
+msgid "{0} after"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:83
+msgid "{0} before"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:114
+msgid "just now"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:151
+msgid "about a second ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:152
+msgid "about a minute ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:153
+msgid "about an hour ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:154
+#: I18n/RelativeTimeFormatter.php:332
+msgid "about a day ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:155
+#: I18n/RelativeTimeFormatter.php:333
+msgid "about a week ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:156
+#: I18n/RelativeTimeFormatter.php:334
+msgid "about a month ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:157
+#: I18n/RelativeTimeFormatter.php:335
+msgid "about a year ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:168
+msgid "in about a second"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:169
+msgid "in about a minute"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:170
+msgid "in about an hour"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:171
+#: I18n/RelativeTimeFormatter.php:346
+msgid "in about a day"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:172
+#: I18n/RelativeTimeFormatter.php:347
+msgid "in about a week"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:173
+#: I18n/RelativeTimeFormatter.php:348
+msgid "in about a month"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:174
+#: I18n/RelativeTimeFormatter.php:349
+msgid "in about a year"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:304
+msgid "today"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:370
+msgid "%s ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:371
+msgid "on %s"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:47
+#: I18n/RelativeTimeFormatter.php:126
+#: I18n/RelativeTimeFormatter.php:316
+msgid "{0} year"
+msgid_plural "{0} years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:51
+#: I18n/RelativeTimeFormatter.php:129
+#: I18n/RelativeTimeFormatter.php:319
+msgid "{0} month"
+msgid_plural "{0} months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:57
+#: I18n/RelativeTimeFormatter.php:132
+#: I18n/RelativeTimeFormatter.php:322
+msgid "{0} week"
+msgid_plural "{0} weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:59
+#: I18n/RelativeTimeFormatter.php:135
+#: I18n/RelativeTimeFormatter.php:325
+msgid "{0} day"
+msgid_plural "{0} days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:64
+#: I18n/RelativeTimeFormatter.php:138
+msgid "{0} hour"
+msgid_plural "{0} hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:68
+#: I18n/RelativeTimeFormatter.php:141
+msgid "{0} minute"
+msgid_plural "{0} minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:72
+#: I18n/RelativeTimeFormatter.php:144
+msgid "{0} second"
+msgid_plural "{0} seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ORM/RulesChecker.php:57
+msgid "This value is already in use"
+msgstr ""
+
+#: ORM/RulesChecker.php:104
+msgid "This value does not exist"
+msgstr ""
+
+#: ORM/RulesChecker.php:128
+msgid "The count does not match {0}{1}"
+msgstr ""
+
+#: Utility/Text.php:934
+msgid "and"
+msgstr ""
+
+#: Validation/Validator.php:2436
+#: View/Form/ArrayContext.php:226
+msgid "This field is required"
+msgstr ""
+
+#: Validation/Validator.php:2458
+msgid "This field cannot be left empty"
+msgstr ""
+
+#: Validation/Validator.php:2608
+msgid "The provided value is invalid"
+msgstr ""
+
+#: View/Helper/FormHelper.php:1109
+msgid "Edit {0}"
+msgstr ""
+
+#: View/Helper/FormHelper.php:1111
+msgid "New {0}"
+msgstr ""
+
+#: View/Helper/FormHelper.php:2030
+msgid "Submit"
+msgstr ""
+
+#: View/Helper/HtmlHelper.php:819
+msgid "Home"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:540
+msgid "January"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:541
+msgid "February"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:542
+msgid "March"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:543
+msgid "April"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:544
+msgid "May"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:545
+msgid "June"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:546
+msgid "July"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:547
+msgid "August"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:548
+msgid "September"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:549
+msgid "October"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:550
+msgid "November"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:551
+msgid "December"
+msgstr ""
+
