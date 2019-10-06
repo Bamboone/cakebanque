@@ -9,7 +9,7 @@
     <div class="list-group m-3">
         <?= $this->Form->postLink(
             __('Supprimer la transaction'),
-            ['action' => 'delete', $transaction->id], ['class' => 'list-group-item list-group-item-action bg-danger text-white', 'confirm' => __('Are you sure you want to delete # {0}?', $transaction->id)]
+            ['action' => 'delete', $transaction->id], ['class' => 'list-group-item list-group-item-action bg-danger text-white', 'confirm' => __('Voulez-vous vraiment supprimer la transaction # {0}?', $transaction->id)]
         )
         ?>
         <?= $this->Html->link(__('Consulter la liste des transactions'), ['action' => 'index'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
@@ -20,6 +20,7 @@
 </nav>
 
 <div class="container">
+    <br>
     <?= $this->Form->create($transaction) ?>
     <fieldset>
         <legend><?= __('Modifier une transaction') ?></legend>

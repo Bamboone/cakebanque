@@ -17,6 +17,7 @@ $loguser = $this->request->getSession()->read('Auth.User');
     </div>
 </nav>
 <div class="container">
+    <br>
     <?= $this->Form->create($message) ?>
     <fieldset>
         <legend><?= __('Ajouter un message') ?></legend>

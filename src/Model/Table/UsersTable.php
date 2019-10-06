@@ -55,6 +55,10 @@ class UsersTable extends Table
             'targetForeignKey' => 'message_id',
             'joinTable' => 'users_messages'
         ]);
+
+        $this->hasMany('Virements', [
+            'foreignKey' => 'user_id'
+        ]);
     }
 
     /**

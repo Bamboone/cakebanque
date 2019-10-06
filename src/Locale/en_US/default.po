@@ -194,7 +194,7 @@ msgstr "Edit"
 #: Template/Transactions/indexctp:48 Template/Users/indexctp:44
 #: Template/Users/viewctp:40
 msgid "Supprimer"
-msgstr "Modify"
+msgstr "Delete"
 
 #: Template/Comptes/indexctp:58
 msgid "Debut"

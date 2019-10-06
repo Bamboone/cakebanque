@@ -15,6 +15,7 @@
 </nav>
 
 <div class="container">
+    <br>
     <?= $this->Form->create($transaction) ?>
     <fieldset>
         <legend><?= __('Ajouter une transaction') ?></legend>

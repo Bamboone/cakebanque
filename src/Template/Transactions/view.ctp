@@ -20,20 +20,14 @@ use Cake\I18n\Number;
 <br>
 <div class="container">
     <div class="card border-primary mb-3">
-        <div class="card-header">Transaction <?= $this->Number->format($transaction->id) ?></div>
+        <div class="card-header"><h4>Transaction du <?= h($transaction->created) ?></h4></div>
         <div class="card-body">
             <div class="card-text float-left">
                 <strong>Provenance: </strong><?= h($transaction->provenance) ?> <br>
                 <strong>Montant: </strong><?= Number::currency($transaction->montant) ?> <br>
-                <strong>Compte: </strong><?= $transaction->has('compte') ? $this->Html->link($transaction->compte->id, ['controller' => 'Comptes', 'action' => 'view', $transaction->compte->id]) : '' ?> <br>
+                <strong>Compte: </strong><?= h($transaction->compte->nom)?> <br>
                 <strong>Type: </strong><?= h($transaction->type) ?> <br>
                 <strong>Date: </strong><?= h($transaction->created) ?> <br>
-            </div>
-            <div class="float-right">
-                <div class="list-group list-group-horizontal">
-                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $transaction->id], ['class' => 'list-group-item list-group-item-action text-white bg-success']) ?>
-                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $transaction->id], ['class' => 'list-group-item list-group-item-action text-white bg-danger', 'confirm' => __('Are you sure you want to delete # {0}?', $transaction->id)]) ?>
-                </div>
             </div>
         </div>
     </div>

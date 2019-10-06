@@ -64,7 +64,7 @@ class ComptesController extends AppController
             }
             $this->Flash->error(__('Le compte n\'a pas pu être sauvegardé, veuillez réessayer.'));
         }
-        $users = $this->Comptes->Users->find('list', ['limit' => 200]);
+        $users = $this->Comptes->Users->find('list', ['limit' => 200, 'valueField'=>'username']);
         $files = $this->Comptes->Files->find('list', ['limit' => 200]);
         $this->set(compact('compte', 'users', 'files'));
     }

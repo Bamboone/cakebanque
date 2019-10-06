@@ -54,13 +54,13 @@ class TransactionsController extends AppController
         if ($this->request->is('post')) {
             $transaction = $this->Transactions->patchEntity($transaction, $this->request->getData());
             if ($this->Transactions->save($transaction)) {
-                $this->Flash->success(__('The transaction has been saved.'));
+                $this->Flash->success(__('La transaction a été sauvegardé.'));
                 $compte = $this->Transactions->Comptes->get($transaction['compte_id']);
                 $compte->balance = $compte['balance'] + $transaction['montant'];
                 $this->Transactions->Comptes->save($compte);
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The transaction could not be saved. Please, try again.'));
+            $this->Flash->error(__('La transaction n\'a pas pu être sauvegardé. Veuillez réessayez.'));
         }
         $comptes = $this->Transactions->Comptes->find('list', ['limit' => 200]);
         $this->set(compact('transaction', 'comptes'));
@@ -76,18 +76,20 @@ class TransactionsController extends AppController
     public function edit($id = null)
     {
         $transaction = $this->Transactions->get($id, [
-            'contain' => []
+            'contain' => ['Comptes']
         ]);
+        $compte = $transaction->compte;
+        $compte->balance -= $transaction['montant'];
         if ($this->request->is(['patch', 'post', 'put'])) {
             $transaction = $this->Transactions->patchEntity($transaction, $this->request->getData());
             if ($this->Transactions->save($transaction)) {
-                $this->Flash->success(__('The transaction has been saved.'));
-                $compte = $this->Transactions->Comptes->get($transaction['compte_id']);
-                $compte->balance = $compte['balance'] + $transaction['montant'];
+                $this->Flash->success(__('La transaction a été sauvegardé.'));
+
+                $compte->balance += $transaction['montant'];
                 $this->Transactions->Comptes->save($compte);
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The transaction could not be saved. Please, try again.'));
+            $this->Flash->error(__('La transaction n\'a pas pu être sauvegardé. Veuillez réessayez.'));
         }
         $comptes = $this->Transactions->Comptes->find('list', ['limit' => 200]);
         $this->set(compact('transaction', 'comptes'));
@@ -103,14 +105,16 @@ class TransactionsController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $transaction = $this->Transactions->get($id);
+        $transaction = $this->Transactions->get($id, [
+            'contain' => ['Comptes']
+        ]);
+        $compte = $transaction->compte;
         if ($this->Transactions->delete($transaction)) {
-            $this->Flash->success(__('The transaction has been deleted.'));
-            $compte = $this->Transactions->Comptes->get($transaction['compte_id']);
-            $compte->balance = $compte['balance'] - $transaction['montant'];
+            $this->Flash->success(__('La transaction a été supprimé.'));
+            $compte->balance -= $transaction['montant'];
             $this->Transactions->Comptes->save($compte);
         } else {
-            $this->Flash->error(__('The transaction could not be deleted. Please, try again.'));
+            $this->Flash->error(__('La transaction n\'a pas pu être supprimé. Veuillez réessayez.'));
         }
 
         return $this->redirect(['action' => 'index']);

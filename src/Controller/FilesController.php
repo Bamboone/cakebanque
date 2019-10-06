@@ -58,15 +58,15 @@ class FilesController extends AppController
                     $file->name = $fileName;
                     $file->path = $uploadPath;
                     if ($this->Files->save($file)) {
-                        $this->Flash->success(__('File has been uploaded and inserted successfully.'));
+                        $this->Flash->success(__('Le fichier a bien été enregistré.'));
                     } else {
-                        $this->Flash->error(__('Unable to upload file, please try again.'));
+                        $this->Flash->error(__('Impossible d\'enregistrer le fichier. Veuillez réessayer.'));
                     }
                 } else {
-                    $this->Flash->error(__('Unable to save file, please try again.'));
+                    $this->Flash->error(__('Impossible de sauvegarder le fichier. Veuillez réessayer.'));
                 }
             } else {
-                $this->Flash->error(__('Please choose a file to upload.'));
+                $this->Flash->error(__('Veuillez choisir un fichier a enregistrer.'));
             }
         }
         $this->set(compact('file'));
@@ -88,11 +88,11 @@ class FilesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $file = $this->Files->patchEntity($file, $this->request->getData());
             if ($this->Files->save($file)) {
-                $this->Flash->success(__('The file has been saved.'));
+                $this->Flash->success(__('Le fichier a bien été enregistré.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The file could not be saved. Please, try again.'));
+            $this->Flash->error(__('Impossible de sauvegarder le fichier. Veuillez réessayer.'));
         }
         $this->set(compact('file'));
     }
@@ -109,9 +109,9 @@ class FilesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $file = $this->Files->get($id);
         if ($this->Files->delete($file)) {
-            $this->Flash->success(__('The file has been deleted.'));
+            $this->Flash->success(__('Le fichier a bien été supprimé.'));
         } else {
-            $this->Flash->error(__('The file could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Le fichier n\'a pas pu être supprimé. Veuillez réessayer.'));
         }
 
         return $this->redirect(['action' => 'index']);

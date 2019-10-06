@@ -19,7 +19,14 @@ class MessagesController extends AppController
      */
     public function index()
     {
-        $messages = $this->paginate($this->Messages);
+        $user_id = $this->Auth->user('id');
+        $requete = $this->Messages->find('all');
+        if($this->Auth->user('role') != 'admin'){
+            $requete->matching('Users', function ($q) use ($user_id) {
+                return $q->where(['Users.id' => $user_id]);
+            });
+        }
+        $messages = $this->paginate($requete);
 
         $this->set(compact('messages'));
     }
@@ -51,13 +58,13 @@ class MessagesController extends AppController
         if ($this->request->is('post')) {
             $message = $this->Messages->patchEntity($message, $this->request->getData());
             if ($this->Messages->save($message)) {
-                $this->Flash->success(__('The message has been saved.'));
+                $this->Flash->success(__('Le message a été sauvegardé.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The message could not be saved. Please, try again.'));
+            $this->Flash->error(__('Le message n\'a pas pu être sauvegardé. Veuillez réessayez.'));
         }
-        $users = $this->Messages->Users->find('list', ['limit' => 200]);
+        $users = $this->Messages->Users->find('list', ['limit' => 200, 'valueField' => 'username']);
         $this->set(compact('message', 'users'));
     }
 
@@ -76,13 +83,13 @@ class MessagesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $message = $this->Messages->patchEntity($message, $this->request->getData());
             if ($this->Messages->save($message)) {
-                $this->Flash->success(__('The message has been saved.'));
+                $this->Flash->success(__('Le message a été sauvegardé.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The message could not be saved. Please, try again.'));
+            $this->Flash->error(__('Le message n\'a pas pu être sauvegardé. Veuillez réessayez.'));
         }
-        $users = $this->Messages->Users->find('list', ['limit' => 200]);
+        $users = $this->Messages->Users->find('list', ['limit' => 200, 'valueField' => 'username']);
         $this->set(compact('message', 'users'));
     }
 
@@ -98,9 +105,9 @@ class MessagesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $message = $this->Messages->get($id);
         if ($this->Messages->delete($message)) {
-            $this->Flash->success(__('The message has been deleted.'));
+            $this->Flash->success(__('Le message a été supprimé.'));
         } else {
-            $this->Flash->error(__('The message could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Le message n\'a pas pu être supprimé. Veuillez réessayez.'));
         }
 
         return $this->redirect(['action' => 'index']);
@@ -108,10 +115,30 @@ class MessagesController extends AppController
 
     public function isAuthorized($user)
     {
+        $action = $this->request->getParam('action');
         if ($user['role'] === 'admin') {
             return true;
         } else {
-            return false;
+            if (in_array($action, ['index'])) {
+                return true;
+            }
+
+            // Toutes les autres actions nécessitent un utilisateur connecté
+            $id = $this->request->getParam('pass.0');
+            if (!$id) {
+                return false;
+            }
+            // On vérifie que le message appartient à l'utilisateur connecté
+            $message = $this->Messages->findById($id) -> contain(['Users']) -> first();
+            $trouve = false;
+            $listeUsers = $message->users;
+            foreach ($listeUsers as $users):
+
+                if($users->get('id') === $user['id']){
+                    $trouve = true;
+                }
+            endforeach;
+            return $trouve;
         }
     }
 }

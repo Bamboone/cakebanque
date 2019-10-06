@@ -51,16 +51,13 @@ $loguser = $this->request->getSession()->read('Auth.User');
                 </div>
 
             </td>
-            <td>
-
-            </td>
         </tr>
         <?php endforeach; ?>
         </tbody>
     </table>
     <div>
         <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('Debut')) ?>
+            <?= $this->Paginator->first('<< ' . __('Début')) ?>
             <?= $this->Paginator->prev('< ' . __('Précédent')) ?>
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__('Suivant') . ' >') ?>

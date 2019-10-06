@@ -5,6 +5,7 @@
  */
 ?>
 <div class="container">
+    <br>
     <?= $this->Form->create($file, ['type' => 'file']) ?>
     <fieldset>
         <legend><?= __('Ajout d\'une image de compte') ?></legend>

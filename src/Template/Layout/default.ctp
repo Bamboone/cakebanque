@@ -13,7 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'Banque Web';
 use Cake\I18n\I18n;
 $loguser = $this->request->getSession()->read('Auth.User');
 ?>
@@ -50,6 +50,9 @@ $loguser = $this->request->getSession()->read('Auth.User');
             <li class="nav-item">
                 <?= $this->Html->link(__('Messages'), ['controller' => 'Messages', 'action' => 'index'], ['class' => 'nav-link']);?>
             </li>
+            <li class="nav-item">
+                <?= $this->Html->link(__('Virements'), ['controller' => 'Virements', 'action' => 'index'], ['class' => 'nav-link']);?>
+            </li>
 
                 <?php
                 if ($loguser['role'] === 'admin') {
@@ -61,6 +64,9 @@ $loguser = $this->request->getSession()->read('Auth.User');
                     echo '</li>';
                 }
                 ?>
+            <li class="nav-item">
+                <?= $this->Html->link(__('À propos'), ['controller' => 'Messages', 'action' => 'index'], ['class' => 'nav-link']);?>
+            </li>
 
 
 

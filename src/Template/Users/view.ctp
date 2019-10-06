@@ -46,7 +46,7 @@ $loguser = $this->request->getSession()->read('Auth.User');
                     </div>
                 </div>
 
-                <br>
+                <hr>
 
 
                 <?php endforeach; ?>

@@ -53,12 +53,12 @@ $loguser = $this->request->getSession()->read('Auth.User');
                         if($loguser['id'] === $users->id) {
                             echo $this->Html->link(__('Consulter'), ['controller' => 'Users', 'action' => 'view', $users->id], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
                             echo $this->Html->link(__('Modifier'), ['controller' => 'Users', 'action' => 'edit', $users->id], ['class' => 'list-group-item list-group-item-action bg-success text-white']);
-                            echo $this->Form->postLink(__('Supprimer'), ['controller' => 'Users', 'action' => 'delete', $users->id], ['class' => 'list-group-item list-group-item-action bg-danger text-white', 'confirm' => __('Voulez vous vraiment supprimer le compte # {0}?', $users->id)]);
+                            echo $this->Form->postLink(__('Supprimer'), ['controller' => 'Users', 'action' => 'delete', $users->id], ['class' => 'list-group-item list-group-item-action bg-danger text-white', 'confirm' => __('Voulez vous vraiment supprimer l\'utilisateur # {0}?', $users->id)]);
                         }
                         ?>
 
                     </div>
-
+                    <hr>
                 <?php endforeach; ?>
                 <h5 class="card-title mt-3"><?= __('Transactions')?></h5>
                 <?php foreach ($compte->transactions as $transaction): ?>

@@ -29,7 +29,7 @@ use Cake\I18n\Number;
 </nav>
 <br>
 <div class="container">
-
+    <br>
     <h3>Transactions</h3>
 
     <?php foreach ($transactions as $transaction): ?>
@@ -44,7 +44,7 @@ use Cake\I18n\Number;
                     <div class="list-group list-group-horizontal">
                         <?= $this->Html->link(__('Consulter'), ['action' => 'view', $transaction->id], ['class' => 'list-group-item list-group-item-action text-white bg-primary']) ?>
                         <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $transaction->id], ['class' => 'list-group-item list-group-item-action text-white bg-success']) ?>
-                        <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $transaction->id], ['class' => 'list-group-item list-group-item-action text-white bg-danger', 'confirm' => __('Are you sure you want to delete # {0}?', $transaction->id)]) ?>
+                        <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $transaction->id], ['class' => 'list-group-item list-group-item-action text-white bg-danger', 'confirm' => __('Voulez-vous vraiment supprimer la transaction # {0}?', $transaction->id)]) ?>
                     </div>
                 </div>
             </div>
