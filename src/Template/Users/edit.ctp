@@ -19,7 +19,6 @@ $loguser = $this->request->getSession()->read('Auth.User');
 
         }
             echo $this->Html->link(__('Consulter la liste des comptes banquaires'), ['controller' => 'Comptes', 'action' => 'index'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
-            echo $this->Html->link(__('Ajouter un nouveau compte banquaire'), ['controller' => 'Comptes', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
         ?>
 
     </div>

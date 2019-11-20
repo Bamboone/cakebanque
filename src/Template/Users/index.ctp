@@ -8,8 +8,6 @@
 <nav class="float-left">
 
 <div class="list-group m-3">
-
-<?= $this->Html->link(__('Ajouter un utilisateur'), ['action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
 <?= $this->Html->link(__('Consulter la liste des comptes banquaires'), ['controller' => 'Comptes', 'action' => 'index'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
 <?= $this->Html->link(__('Créer un nouveau compte banquaire'), ['controller' => 'Comptes', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
 </div>

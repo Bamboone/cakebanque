@@ -121,11 +121,13 @@ class FilesController extends AppController
     {
         if ($user['role'] === 'admin') {
             return true;
-        } else {
+        } else if ($user['active'] == 1){
             $action = $this->request->getParam('action');
             if (in_array($action, ['add'])) {
                 return true;
             }
+        }else{
+            return false;
         }
 
 

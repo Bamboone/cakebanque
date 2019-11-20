@@ -38,7 +38,7 @@
                     <div class="list-group list-group-horizontal">
                         <?= $this->Html->link('Consulter', ['action' => 'view', $file->id], ['class' => 'list-group-item list-group-item-action text-white bg-primary']) ?>
                         <?= $this->Html->link('Modifier', ['action' => 'edit', $file->id], ['class' => 'list-group-item list-group-item-action text-white bg-success']) ?>
-                        <?= $this->Form->postLink('Supprimer', ['action' => 'delete', $file->id], ['class' => 'list-group-item list-group-item-action text-white bg-danger', 'confirm' => __('Voulez vous vraiment supprimer l\'utilisateur # {0}?', $file->id)]) ?>
+                        <?= $this->Form->postLink('Supprimer', ['action' => 'delete', $file->id], ['class' => 'list-group-item list-group-item-action text-white bg-danger', 'confirm' => __('Voulez vous vraiment supprimer l\'image # {0}?', $file->id)]) ?>
                     </div>
                 </div>
             </div>

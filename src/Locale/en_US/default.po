@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2019-09-16 13:12+0000\n"
-"PO-Revision-Date: 2019-09-23 10:23-0400\n"
+"PO-Revision-Date: 2019-10-08 14:49-0400\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,19 +17,19 @@ msgstr ""
 
 #: Controller/ComptesControllerphp:63 Controller/ComptesControllerphp:89
 msgid "Le compte a été sauvegardé."
-msgstr "Le compte a été sauvegardé."
+msgstr "The bank account has been saved."
 
 #: Controller/ComptesControllerphp:67 Controller/ComptesControllerphp:93
 msgid "Le compte n'a pas pu être sauvegardé, veuillez réessayer."
-msgstr "Le compte n'a pas pu être sauvegardé, veuillez réessayer."
+msgstr "The bank account could not be saved. Please, try again."
 
 #: Controller/ComptesControllerphp:111
 msgid "Le compte a été supprimé."
-msgstr "Le compte a été supprimé."
+msgstr "The bank account has been deleted."
 
 #: Controller/ComptesControllerphp:113
 msgid "Le compte n'a pas pu être supprimé, veuillez réessayer."
-msgstr "Le compte n'a pas pu être supprimé, veuillez réessayer."
+msgstr "The bank account could not be deleted. Please, try again."
 
 #: Controller/MessagesControllerphp:54 Controller/MessagesControllerphp:79
 msgid "The message has been saved."
@@ -107,8 +107,26 @@ msgstr "View the list of users"
 #: Template/Comptes/indexctp:14 Template/Comptes/viewctp:21
 #: Template/Users/addctp:20 Template/Users/indexctp:11
 #: Template/Users/viewctp:18
-msgid "Ajouter un utilisateur"
-msgstr "Add a new user"
+msgid "Création de compte"
+msgstr "Create an account"
+
+msgid "Cette valeur est déjà utilisée"
+msgstr "This value is already in use"
+
+msgid "Institution"
+msgstr "Institution"
+
+msgid "Ville"
+msgstr "City"
+
+msgid "Institutions"
+msgstr "Institutions"
+
+msgid "Villes"
+msgstr "Cities"
+
+msgid "Vous n'avez pas l'autorisation d'accéder à cet endroit"
+msgstr "You are not authorized to access that location"
 
 #: Template/Comptes/addctp:19
 msgid "Ajouter un compte banquaire"
@@ -217,12 +235,8 @@ msgstr "Last"
 
 #: Template/Comptes/indexctp:64 Template/Transactions/indexctp:63
 #: Template/Users/indexctp:60
-msgid ""
-"Page {{page}} de {{pages}}, {{current}} entrée(s) montrée(s) sur un total de "
-"{{count}}"
-msgstr ""
-"Page {{page}} of {{pages}}, {{current}} record(s) showed out of {{count}} in "
-"total"
+msgid "Page {{page}} de {{pages}}, {{current}} entrée(s) montrée(s) sur un total de {{count}}"
+msgstr "Page {{page}} of {{pages}}, {{current}} record(s) showed out of {{count}} in total"
 
 #: Template/Comptes/viewctp:11
 msgid "Modifier le compte banquaire"
@@ -262,7 +276,7 @@ msgstr "My user account"
 
 #: Template/Layout/defaultctp:80
 msgid "Créer un compte"
-msgstr "Create a user account"
+msgstr "Create an account"
 
 #: Template/Layout/defaultctp:90
 msgid " Déconnecter"
@@ -377,9 +391,7 @@ msgid "last"
 msgstr ""
 
 #: Template/Messages/indexctp:53
-msgid ""
-"Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
-"total"
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
 msgstr ""
 
 #: Template/Messages/viewctp:11
@@ -551,6 +563,30 @@ msgstr "Related bank accounts"
 msgid "Ajouter une image de compte"
 msgstr "Add a new image"
 
+msgid "Votre compte est maintenant confirmé! Veuillez vous reconnecter pour avoir accès à votre compte."
+msgstr "Your account is now confirmed! Please reconnect to have access to your account"
+
+msgid "Un lien de confirmation a été envoyé."
+msgstr "A confirmation link has been sent"
+
+msgid "Vous n'avez pas confirmé votre adresse courriel, la majorité des fonctionnalités du site sont alors indisponibles. Vous avez seulement accès aux informations de votre compte utilisateur. Un bouton est disponible ci-dessous pour envoyer le lien à nouveau si vous ne l'avez pas recu."
+msgstr "You email address is not confirmed, most of the features are not available. You only have access to your user account information. The button below can be used to send another confirmation link."
+
+msgid "Vous avez presque fini!"
+msgstr "You're almost done!"
+
+msgid "Un courriel de confirmation a été envoyé à votre adresse courriel. Veuillez cliquer sur le lien présent dans ce courriel pour avoir accès aux fonctionalités du site!"
+msgstr "A confirmation email has been sent to your email address. Please click on that link to get access to all the features of this site!"
+
+msgid "Renvoyer le lien de confirmation"
+msgstr "Resend confirmation link"
+
+msgid "Virements"
+msgstr "Transfers"
+
+msgid "À propos"
+msgstr "About"
+
 #: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Element/formctp:30
 #: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:54
 msgid "List <%= $pluralHumanName %>"
@@ -580,9 +616,7 @@ msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:18
 #: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:62
-msgid ""
-"New <%= Inflector::humanize(Inflector::singularize(Inflector::"
-"underscore($alias))) %>"
+msgid "New <%= Inflector::humanize(Inflector::singularize(Inflector::underscore($alias))) %>"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:52
@@ -940,9 +974,7 @@ msgid "Invalid cache engine name."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Controller/Component/ToolbarComponentphp:42
-msgid ""
-"{0} is now loaded through plugin bootstrapping. Make sure you have {1} in "
-"your application's {2}."
+msgid "{0} is now loaded through plugin bootstrapping. Make sure you have {1} in your application's {2}."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Model/Table/PanelsTablephp:59
@@ -1022,9 +1054,7 @@ msgid "Longest/shortest request: :longest sec/:shortest sec"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:147
-msgid ""
-"Allows you to obtain some rough benchmarking statisticsabout a fully "
-"qualified URL."
+msgid "Allows you to obtain some rough benchmarking statisticsabout a fully qualified URL."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:153
@@ -1036,15 +1066,11 @@ msgid "Number of iterations to perform."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:162
-msgid ""
-"Maximum total time for all iterations, in seconds.If a single iteration "
-"takes more than the timeout, only one request will be made"
+msgid "Maximum total time for all iterations, in seconds.If a single iteration takes more than the timeout, only one request will be made"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:168
-msgid ""
-"Example Use: `cake benchmark --n 10 --t 100 http://localhost/testsite`. "
-"<info>Note:</info> this benchmark does not include browser render times."
+msgid "Example Use: `cake benchmark --n 10 --t 100 http://localhost/testsite`. <info>Note:</info> this benchmark does not include browser render times."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Shell/WhitespaceShellphp:98
@@ -1347,15 +1373,11 @@ msgid "Testing emails can be very time consuming"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:31
-msgid ""
-"Specially when you need to click a bunch of times on an interface to trigger "
-"them."
+msgid "Specially when you need to click a bunch of times on an interface to trigger them."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:32
-msgid ""
-"Wouldn't it be better to just change the templates and refresh the browser "
-"to see the result?"
+msgid "Wouldn't it be better to just change the templates and refresh the browser to see the result?"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:33
@@ -1367,8 +1389,7 @@ msgid "Example"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:36
-msgid ""
-"{0} integrates with CakePHP’s {1} class. Here's an example of such a mailer:"
+msgid "{0} integrates with CakePHP’s {1} class. Here's an example of such a mailer:"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:50
@@ -1388,9 +1409,7 @@ msgid "Note that the function MUST return the UserMailer object at the end."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:88
-msgid ""
-"Since {0} have a fluent interface, you just need to return the result of the "
-"chain of calls."
+msgid "Since {0} have a fluent interface, you just need to return the result of the chain of calls."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:89

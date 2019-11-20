@@ -59,17 +59,14 @@ class TransactionsTable extends Table
 
         $validator
             ->scalar('provenance')
-            ->maxLength('provenance', 255)
-            ->allowEmptyString('provenance');
+            ->maxLength('provenance', 255);
 
         $validator
-            ->decimal('montant')
-            ->allowEmptyString('montant');
+            ->decimal('montant');
 
         $validator
             ->scalar('type')
-            ->maxLength('type', 255)
-            ->allowEmptyString('type');
+            ->maxLength('type', 255);
 
         $validator
             ->integer('compte_id')

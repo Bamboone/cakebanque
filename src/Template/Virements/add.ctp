@@ -22,7 +22,7 @@ $loguser = $this->request->getSession()->read('Auth.User');
         <legend><?= __('Faire un virement') ?></legend>
         <?php
             echo $this->Form->control('compte_id', ['options' => $comptes, 'empty' => false]);
-            echo $this->Form->control('email', ['label' => 'Courriel']);
+            echo $this->Form->control('email', ['label' => 'Courriel du destinataire']);
             echo $this->Form->control('montant');
             echo $this->Form->control('user_id', ['value' => $loguser['id'], 'type' => 'hidden']);
         ?>

@@ -14,7 +14,7 @@
         echo $this->Form->control('name', ['type' => 'file', 'label' => 'Nom du fichier']);
         // echo $this->Form->control('name');
         // echo $this->Form->control('path');
-        echo $this->Form->control('status');
+        echo $this->Form->control('status', ['type' => 'hidden']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Soumettre'), array('class' => 'btn btn-outline-primary')) ?>

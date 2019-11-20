@@ -61,12 +61,14 @@ class VirementsTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->email('email')
-            ->allowEmptyString('email');
+            ->email('email');
 
         $validator
-            ->numeric('montant')
-            ->allowEmptyString('montant');
+            ->numeric('montant');
+
+        $validator
+            ->integer('compte_id')
+            ->requirePresence('compte_id', null, 'Veuillez choisir un compte');
 
         return $validator;
     }

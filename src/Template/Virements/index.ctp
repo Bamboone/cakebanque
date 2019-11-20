@@ -35,7 +35,7 @@ use Cake\I18n\Number; ?>
 
                         <tr>
                             <th scope="row"><?=  Number::currency($virement->montant) ?></th>
-                            <td>Envoyé à <?= h($virement->email) ?></td>
+                            <td style="width: 50%">Envoyé à <?= h($virement->email) ?></td>
                             <td>
                                 <div class="list-group list-group-horizontal">
                                     <?= $this->Html->link(__('Consulter'), ['action' => 'view', $virement->id], ['class' => 'list-group-item list-group-item-action text-white bg-primary']) ?>

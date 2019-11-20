@@ -137,7 +137,7 @@ class VirementsController extends AppController
 
         if($user['role'] == 'admin'){
             return true;
-        }else{
+        }else if($user['active'] == 1){
             if (in_array($action, ['add', 'index'])) {
                 return true;
             }
@@ -153,6 +153,8 @@ class VirementsController extends AppController
                 return true;
             }
 
+        }else{
+            return false;
         }
 
     }

@@ -53,7 +53,22 @@ class ComptesTable extends Table
             'foreignKey' => 'file_id'
         ]);
 
-        $this->hasMany('Transactions');
+        $this->belongsTo('Institutions', [
+            'foreignKey' => 'institution_id'
+        ]);
+
+
+        $this->hasMany('Transactions', [
+            'foreignKey' => 'compte_id',
+            'dependent' => true,
+            'cascadeCallbacks' => true,
+        ]);
+
+        $this->hasMany('Virements', [
+            'foreignKey' => 'compte_id',
+            'dependent' => true,
+            'cascadeCallbacks' => true,
+        ]);
     }
 
     /**
@@ -67,6 +82,10 @@ class ComptesTable extends Table
         $validator
             ->integer('id')
             ->allowEmptyString('id', null, 'create');
+
+        $validator
+            ->integer('institution_id')
+            ->requirePresence('institution_id', 'create');
 
         $validator
             ->scalar('type_compte')

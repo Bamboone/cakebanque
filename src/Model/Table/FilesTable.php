@@ -41,7 +41,7 @@ class FilesTable extends Table
         $this->addBehavior('Timestamp');
 
         $this->hasMany('Comptes', [
-            'foreignKey' => 'file_id'
+            'foreignKey' => 'file_id',
         ]);
     }
 

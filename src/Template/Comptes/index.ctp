@@ -11,12 +11,6 @@ $loguser = $this->request->getSession()->read('Auth.User');
 
     <div class="list-group m-3">
         <?= $this->Html->link(__('Créer un nouveau compte banquaire'), ['action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
-        <?php
-        if($loguser['role'] === 'admin'){
-            echo $this->Html->link(__('Consulter la liste des utilisateurs'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
-            echo $this->Html->link(__('Ajouter un utilisateur'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
-        }
-        ?>
         <?= $this->Html->link(__('Ajouter une image de compte'), ['controller' => 'Files', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
     </div>
     <br>

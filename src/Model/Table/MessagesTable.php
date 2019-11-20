@@ -61,8 +61,7 @@ class MessagesTable extends Table
 
         $validator
             ->scalar('titre')
-            ->maxLength('titre', 255)
-            ->allowEmptyString('titre');
+            ->maxLength('titre', 255);
 
         $validator
             ->scalar('message')

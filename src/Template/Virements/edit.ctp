@@ -25,7 +25,7 @@
     <fieldset>
         <legend><?= __('Modifier le virement') ?></legend>
         <?php
-            echo $this->Form->control('email', ['label' => 'Courriel']);
+            echo $this->Form->control('email', ['label' => 'Courriel du destinataire']);
             echo $this->Form->control('montant');
             echo $this->Form->control('compte_id', ['options' => $comptes, 'empty' => true]);
             echo $this->Form->control('user_id', ['options' => $users, 'empty' => true]);

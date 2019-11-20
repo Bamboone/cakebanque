@@ -26,15 +26,26 @@ $loguser = $this->request->getSession()->read('Auth.User');
         <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
+    <script src="https://kit.fontawesome.com/88d95153ea.js" crossorigin="anonymous"></script>
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->css('bootstrap') ?>
+    <?= $this->Html->css('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') ?>
+    <?= $this->Html->css('https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css') ?>
     <?= $this->Html->script('jquery-3.4.1.js') ?>
     <?= $this->Html->script('bootstrap.js') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+    <?php
+    echo $this->Html->script([
+            'https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js',
+            'https://code.jquery.com/jquery-1.12.4.js',
+            'https://code.jquery.com/ui/1.12.1/jquery-ui.js'
+    ], ['block' => 'scriptLibraries']
+    );
+    ?>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
@@ -45,27 +56,36 @@ $loguser = $this->request->getSession()->read('Auth.User');
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <?= $this->Html->link(__('Comptes banquaires'), ['controller' => 'Comptes', 'action' => 'index'], ['class' => 'nav-link']);?>
+                <?= $this->Html->link(__('Comptes banquaires'), ['prefix' => false, 'controller' => 'Comptes', 'action' => 'index'], ['class' => 'nav-link']);?>
             </li>
             <li class="nav-item">
-                <?= $this->Html->link(__('Messages'), ['controller' => 'Messages', 'action' => 'index'], ['class' => 'nav-link']);?>
+                <?= $this->Html->link(__('Messages'), ['prefix' => false, 'controller' => 'Messages', 'action' => 'index'], ['class' => 'nav-link']);?>
             </li>
             <li class="nav-item">
-                <?= $this->Html->link(__('Virements'), ['controller' => 'Virements', 'action' => 'index'], ['class' => 'nav-link']);?>
+                <?= $this->Html->link(__('Virements'), ['prefix' => false, 'controller' => 'Virements', 'action' => 'index'], ['class' => 'nav-link']);?>
             </li>
 
                 <?php
                 if ($loguser['role'] === 'admin') {
                     echo '<li class="nav-item">';
-                    echo $this->Html->link(__('Transactions'), ['controller' => 'Transactions', 'action' => 'index'], ['class' => 'nav-link']);
+                    echo $this->Html->link(__('Transactions'), ['prefix' => false, 'controller' => 'Transactions', 'action' => 'index'], ['class' => 'nav-link']);
                     echo '</li>';
                     echo '<li class="nav-item">';
-                    echo $this->Html->link(__('Images'), ['controller' => 'Files', 'action' => 'index'], ['class' => 'nav-link']);
+                    echo $this->Html->link(__('Images'), ['prefix' => false, 'controller' => 'Files', 'action' => 'index'], ['class' => 'nav-link']);
+                    echo '</li>';
+                    echo '<li class="nav-item">';
+                    echo $this->Html->link(__('Institutions'), ['prefix' => false, 'controller' => 'Institutions', 'action' => 'index'], ['class' => 'nav-link']);
+                    echo '</li>';
+                    echo '<li class="nav-item">';
+                    echo $this->Html->link(__('Villes'), ['prefix' => false, 'controller' => 'Villes', 'action' => 'index'], ['class' => 'nav-link']);
+                    echo '</li>';
+                    echo '<li class="nav-item">';
+                    echo $this->Html->link(__('Comptes banquaires (vue admin)'), ['prefix' => 'admin', 'controller' => 'Comptes', 'action' => 'index'], ['class' => 'nav-link']);
                     echo '</li>';
                 }
                 ?>
             <li class="nav-item">
-                <?= $this->Html->link(__('À propos'), ['controller' => 'Messages', 'action' => 'index'], ['class' => 'nav-link']);?>
+                <?= $this->Html->link(__('À propos'), '/html/index.html', ['class' => 'nav-link']);?>
             </li>
 
 
@@ -77,10 +97,10 @@ $loguser = $this->request->getSession()->read('Auth.User');
                     <?php
                     if (I18n::getLocale() == 'en_US'){
                         echo 'English';
-                    }else if(I18n::getLocale() == 'fr_CA'){
-                        echo 'Français';
-                    }else{
+                    }else if(I18n::getLocale() == 'zh_CN'){
                         echo '普通话';
+                    }else{
+                        echo 'Francais';
                     }
                     ?>
                 </a>
@@ -95,9 +115,9 @@ $loguser = $this->request->getSession()->read('Auth.User');
                 if ($loguser) {
                     $user = $loguser['name'];
                     $userId = $loguser['id'];
-                    echo $this->Html->link($user, ['controller' => 'Users', 'action' => 'view', $userId], ['class' => 'nav-link']);
+                    echo $this->Html->link($user, ['prefix' => false, 'controller' => 'Users', 'action' => 'view', $userId], ['class' => 'nav-link']);
                 } else {
-                    echo $this->Html->link(__('Créer un compte'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'nav-link']);
+                    echo $this->Html->link(__('Créer un compte'), ['prefix' => false, 'controller' => 'Users', 'action' => 'add'], ['class' => 'nav-link']);
                 }
                 ?>
 
@@ -105,9 +125,9 @@ $loguser = $this->request->getSession()->read('Auth.User');
             <li class="nav-item">
                 <?php
                 if ($loguser) {
-                    echo $this->Html->link(__(' Déconnecter'), ['controller' => 'Users', 'action' => 'logout'], ['class' => 'nav-link']);
+                    echo $this->Html->link(__(' Déconnecter'), ['prefix' => false, 'controller' => 'Users', 'action' => 'logout'], ['class' => 'nav-link']);
                 } else {
-                    echo $this->Html->link(__('Connecter'), ['controller' => 'Users', 'action' => 'login'], ['class' => 'nav-link']);
+                    echo $this->Html->link(__('Connecter'), ['prefix' => false, 'controller' => 'Users', 'action' => 'login'], ['class' => 'nav-link']);
                 }
                 ?>
             </li>
@@ -126,5 +146,8 @@ $loguser = $this->request->getSession()->read('Auth.User');
 </div>
 <footer>
 </footer>
+<?= $this->fetch('scriptLibraries') ?>
+<?= $this->fetch('script'); ?>
+<?= $this->fetch('scriptBottom') ?>
 </body>
 </html>

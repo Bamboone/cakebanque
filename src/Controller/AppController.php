@@ -39,6 +39,9 @@ class AppController extends Controller
      *
      * @return void
      */
+
+    use \Crud\Controller\ControllerTrait;
+
     public function initialize()
     {
         parent::initialize();
@@ -69,7 +72,23 @@ class AppController extends Controller
             'unauthorizedRedirect' => $this->referer(['controller' => 'Users', 'action' => 'login'])
 
         ]);
-        $this->Auth->allow(['controller' => 'App', 'action' => 'changelang']);
+        $this->loadComponent('Crud.Crud', [
+            'actions' => [
+                'Crud.Index',
+                'Crud.View',
+                'Crud.Add',
+                'Crud.Edit',
+                'Crud.Delete'
+            ],
+            'listeners' => [
+                'Crud.Api',
+                'Crud.ApiPagination',
+                'Crud.ApiQueryLog'
+            ]
+        ]);
+        $this->Auth->allow(['action' => 'changelang']);
+        $this->Auth->config('authError', __('Vous n\'avez pas l\'autorisation d\'accéder à cet endroit'));
+
 
 
 

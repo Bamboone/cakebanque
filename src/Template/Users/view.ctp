@@ -8,20 +8,22 @@ $loguser = $this->request->getSession()->read('Auth.User');
 <nav class="float-left" style="max-width: 20rem;">
 
     <div class="list-group m-3">
-        <?= $this->Html->link(__('Modifier l\'utilisateur'), ['action' => 'edit', $user->id], ['class' => 'list-group-item list-group-item-action bg-success text-white']) ?>
         <?= $this->Form->postLink(
             __('Supprimer l\'utilisateur'),
             ['action' => 'delete', $user->id], ['class' => 'list-group-item list-group-item-action bg-danger text-white', 'confirm' => __('Voulez vous vraiment supprimer l\'utilisateur # {0}?', $user->id)]
         )
         ?>
         <?php
+        if($loguser['active'] === 1){
+            echo $this->Html->link(__('Modifier l\'utilisateur'), ['action' => 'edit', $user->id], ['class' => 'list-group-item list-group-item-action bg-success text-white']);
+            echo $this->Html->link(__('Consulter la liste des comptes banquaires'), ['controller' => 'Comptes', 'action' => 'index'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
+            echo $this->Html->link(__('Ajouter un nouveau compte banquaire'), ['controller' => 'Comptes', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
+        }
         if($loguser['role'] === 'admin'){
             echo $this->Html->link(__('Consulter la liste des utilisateurs'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
-            echo $this->Html->link(__('Ajouter un utilisateur'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
         }
         ?>
-        <?= $this->Html->link(__('Consulter la liste des comptes banquaires'), ['controller' => 'Comptes', 'action' => 'index'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
-        <?= $this->Html->link(__('Ajouter un nouveau compte banquaire'), ['controller' => 'Comptes', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
+
     </div>
 
 </nav>

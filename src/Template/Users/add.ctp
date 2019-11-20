@@ -25,7 +25,7 @@ $loguser = $this->request->getSession()->read('Auth.User');
     <br>
     <?= $this->Form->create($user) ?>
     <fieldset>
-        <legend><?= __('Ajouter un utilisateur') ?></legend>
+        <legend><?= __('Création de compte') ?></legend>
         <?php
             echo $this->Form->control('name', ['label' => __('Nom')]);
             echo $this->Form->control('username', ['label' => __('Nom d\'utilisateur')]);

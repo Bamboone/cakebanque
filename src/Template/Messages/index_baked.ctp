@@ -13,7 +13,6 @@ $loguser = $this->request->getSession()->read('Auth.User');
         if($loguser['role'] === 'admin'){
             echo $this->Html->link(__('Écrire un message'), ['action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
             echo $this->Html->link(__('Consulter la liste des utilisateurs'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
-            echo $this->Html->link(__('Ajouter un utilisateur'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
         }
         ?>
 
@@ -38,7 +37,7 @@ $loguser = $this->request->getSession()->read('Auth.User');
         <?php foreach ($messages as $message): ?>
         <tr>
             <th scope="row"><?= h($message->created) ?></th>
-            <td><?= h($message->titre) ?></td>
+            <td style="width: 50%"><?= h($message->titre) ?></td>
             <td>
                 <div class="list-group list-group-horizontal">
                     <?= $this->Html->link(__('Consulter'), ['action' => 'view', $message->id], ['class' => 'list-group-item list-group-item-action text-white bg-primary']) ?>

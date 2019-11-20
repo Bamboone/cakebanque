@@ -21,11 +21,10 @@ class ComptesController extends AppController
     {
         $user_id = $this->Auth->user('id');
         $requete = $this->Comptes->find('all');
-        if($this->Auth->user('role') != 'admin'){
-            $requete->matching('Users', function ($q) use ($user_id) {
-                return $q->where(['Users.id' => $user_id]);
-            });
-        }
+        $requete->matching('Users', function ($q) use ($user_id) {
+            return $q->where(['Users.id' => $user_id]);
+        });
+
         $comptes = $this->paginate($requete);
         $this->set(compact('comptes'));
     }
@@ -40,10 +39,11 @@ class ComptesController extends AppController
     public function view($id = null)
     {
         $compte = $this->Comptes->get($id, [
-            'contain' => ['Users', 'Transactions', 'Files']
+            'contain' => ['Users', 'Transactions', 'Files', 'Institutions' => ['Villes']]
         ]);
 
         $this->set('compte', $compte);
+        $this->set('_serialize', ['comptes']);
     }
 
     /**
@@ -64,9 +64,21 @@ class ComptesController extends AppController
             }
             $this->Flash->error(__('Le compte n\'a pas pu être sauvegardé, veuillez réessayer.'));
         }
+
+        $this->loadModel('Villes');
+        $villes = $this->Villes->find('list', ['limit' => 200, 'valueField'=>'nom']);
+
+        $villes = $villes->toArray();
+        reset($villes);
+        $ville_id = key($villes);
+
+        $institutions = $this->Comptes->Institutions->find('list', [
+            'conditions' => ['Institutions.ville_id' => $ville_id],
+        ]);
+
         $users = $this->Comptes->Users->find('list', ['limit' => 200, 'valueField'=>'username']);
         $files = $this->Comptes->Files->find('list', ['limit' => 200]);
-        $this->set(compact('compte', 'users', 'files'));
+        $this->set(compact('compte', 'users', 'files', 'villes', 'institutions'));
     }
 
     /**
@@ -79,7 +91,7 @@ class ComptesController extends AppController
     public function edit($id = null)
     {
         $compte = $this->Comptes->get($id, [
-            'contain' => ['Users']
+            'contain' => ['Users', 'Files', 'Institutions' => ['Villes']]
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $compte = $this->Comptes->patchEntity($compte, $this->request->getData());
@@ -91,9 +103,14 @@ class ComptesController extends AppController
             }
             $this->Flash->error(__('Le compte n\'a pas pu être sauvegardé, veuillez réessayer.'));
         }
-        $users = $this->Comptes->Users->find('list', ['limit' => 200]);
+        $users = $this->Comptes->Users->find('list', ['limit' => 200, 'valueField'=>'username']);
         $files = $this->Comptes->Files->find('list', ['limit' => 200]);
-        $this->set(compact('compte', 'users', 'files'));
+        $this->loadModel('Villes');
+        $villes = $this->Villes->find('list', ['limit' => 200, 'valueField'=>'nom']);
+        $institutions = $this->Comptes->Institutions->find('list', [
+            'conditions' => ['Institutions.ville_id' => $compte->institution->ville_id],
+        ]);
+        $this->set(compact('compte', 'users', 'files', 'institutions', 'villes'));
     }
 
     /**
@@ -123,7 +140,7 @@ class ComptesController extends AppController
         // authentifiés sur l'application
         if($user['role'] == 'admin'){
             return true;
-        }else{
+        }else if($user['active'] == 1){
             if (in_array($action, ['add', 'index'])) {
                 return true;
             }
@@ -144,6 +161,8 @@ class ComptesController extends AppController
                 }
             endforeach;
             return $trouve;
+        }else{
+            return false;
         }
 
     }

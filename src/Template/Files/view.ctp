@@ -37,7 +37,7 @@ use Cake\I18n\Number;
                 <div class="list-group list-group-horizontal m-3">
                         <?= $this->Html->link(__('Consulter'), ['controller' => 'Comptes', 'action' => 'view', $compte->id], ['class' => 'list-group-item list-group-item-action bg-primary text-white']) ?>
                         <?= $this->Html->link(__('Modifier'), ['controller' => 'Comptes', 'action' => 'edit', $compte->id], ['class' => 'list-group-item list-group-item-action bg-success text-white']) ?>
-                        <?= $this->Form->postLink(__('Supprimer'), ['controller' => 'Comptes', 'action' => 'delete', $compte->id], ['class' => 'list-group-item list-group-item-action bg-danger text-white', 'confirm' => __('Voulez-vous vraiment supprimer l\'utilisateur # {0}?', $compte->id)]) ?>
+                        <?= $this->Form->postLink(__('Supprimer'), ['controller' => 'Comptes', 'action' => 'delete', $compte->id], ['class' => 'list-group-item list-group-item-action bg-danger text-white', 'confirm' => __('Voulez-vous vraiment supprimer l\'image # {0}?', $compte->id)]) ?>
                 </div>
                     <?php endforeach; ?>
                 <?php endif; ?>

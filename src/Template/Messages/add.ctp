@@ -11,7 +11,6 @@ $loguser = $this->request->getSession()->read('Auth.User');
         <?php
             echo $this->Html->link(__('Consulter la liste des messages'), ['action' => 'index'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
             echo $this->Html->link(__('Consulter la liste des utilisateurs'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
-            echo $this->Html->link(__('Ajouter un utilisateur'), ['controller' => 'Users', 'action' => 'add'], ['class' => 'list-group-item list-group-item-action bg-primary text-white']);
         ?>
 
     </div>

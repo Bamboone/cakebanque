@@ -35,7 +35,8 @@ class Compte extends Entity
         'created' => true,
         'modified' => true,
         'users' => true,
-        'file_id' => true
+        'file_id' => true,
+        'institution_id' => true
     ];
 
 }

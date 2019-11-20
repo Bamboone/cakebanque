@@ -3,6 +3,13 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Transaction $transaction
  */
+$urlToCarsAutocompletedemoJson = $this->Url->build([
+    "controller" => "Transactions",
+    "action" => "findProvenances",
+    "_ext" => "json"
+]);
+echo $this->Html->scriptBlock('var urlToAutocompleteAction = "' . $urlToCarsAutocompletedemoJson . '";', ['block' => true]);
+echo $this->Html->script('Provenances/autocomplete', ['block' => 'scriptBottom']);
 ?>
 <nav class="float-left" style="max-width: 20rem;">
 
@@ -25,7 +32,7 @@
     <fieldset>
         <legend><?= __('Modifier une transaction') ?></legend>
         <?php
-            echo $this->Form->control('provenance');
+            echo $this->Form->control('provenance', ['id'=>'autocomplete']);
             echo $this->Form->control('montant');
             echo $this->Form->control('type');
             echo $this->Form->control('compte_id', ['options' => $comptes, 'empty' => true]);

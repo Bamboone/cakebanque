@@ -120,6 +120,24 @@ class TransactionsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    public function findProvenances(){
+        if ($this->request->is('ajax')) {
+
+            $this->autoRender = false;
+            $name = $this->request->query['term'];
+            $this->loadModel('Provenances');
+            $results = $this->Provenances->find('all', array(
+                'conditions' => array('Provenances.name LIKE ' => '%' . $name . '%')
+            ));
+
+            $resultArr = array();
+            foreach ($results as $result) {
+                $resultArr[] = array('label' => $result['name'], 'value' => $result['name']);
+            }
+            echo json_encode($resultArr);
+        }
+    }
+
     public function isAuthorized($user)
     {
     if($user['role'] === 'admin'){

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2019-09-16 14:30+0000\n"
-"PO-Revision-Date: 2019-09-16 10:35-0400\n"
+"PO-Revision-Date: 2019-10-08 14:42-0400\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,13 +47,11 @@ msgstr "邮件无法删除。"
 msgid "The message could not be deleted. Please, try again."
 msgstr "邮件无法删除。请再试一次。"
 
-#: Controller/TransactionsControllerphp:57
-#: Controller/TransactionsControllerphp:84
+#: Controller/TransactionsControllerphp:57 Controller/TransactionsControllerphp:84
 msgid "The transaction has been saved."
 msgstr "交易已保存。"
 
-#: Controller/TransactionsControllerphp:63
-#: Controller/TransactionsControllerphp:90
+#: Controller/TransactionsControllerphp:63 Controller/TransactionsControllerphp:90
 msgid "The transaction could not be saved. Please, try again."
 msgstr "无法保存交易。请再试一次。"
 
@@ -89,34 +87,41 @@ msgstr "您的用户名或密码不正确"
 msgid "Vous avez été déconnecté."
 msgstr "您已断开连接。"
 
-#: Template/Comptes/addctp:10 Template/Comptes/editctp:16
-#: Template/Comptes/viewctp:18 Template/Transactions/addctp:11
-#: Template/Transactions/editctp:17 Template/Transactions/indexctp:11
-#: Template/Users/addctp:10 Template/Users/editctp:17
-#: Template/Users/indexctp:12 Template/Users/viewctp:19
+#: Template/Comptes/addctp:10 Template/Comptes/editctp:16 Template/Comptes/viewctp:18 Template/Transactions/addctp:11 Template/Transactions/editctp:17 Template/Transactions/indexctp:11 Template/Users/addctp:10 Template/Users/editctp:17 Template/Users/indexctp:12 Template/Users/viewctp:19
 msgid "Consulter la liste des comptes banquaires"
 msgstr "查阅银行账户清单"
 
-#: Template/Comptes/addctp:11 Template/Comptes/editctp:17
-#: Template/Comptes/indexctp:13 Template/Comptes/viewctp:20
-#: Template/Users/addctp:11 Template/Users/editctp:16 Template/Users/viewctp:17
+#: Template/Comptes/addctp:11 Template/Comptes/editctp:17 Template/Comptes/indexctp:13 Template/Comptes/viewctp:20 Template/Users/addctp:11 Template/Users/editctp:16 Template/Users/viewctp:17
 msgid "Consulter la liste des utilisateurs"
 msgstr "查看用户列表"
 
-#: Template/Comptes/addctp:12 Template/Comptes/editctp:18
-#: Template/Comptes/indexctp:14 Template/Comptes/viewctp:21
-#: Template/Users/addctp:20 Template/Users/indexctp:11
-#: Template/Users/viewctp:18
-msgid "Ajouter un utilisateur"
-msgstr "添加用户"
+#: Template/Comptes/addctp:12 Template/Comptes/editctp:18 Template/Comptes/indexctp:14 Template/Comptes/viewctp:21 Template/Users/addctp:20 Template/Users/indexctp:11 Template/Users/viewctp:18
+msgid "Création de compte"
+msgstr "创建一个帐户"
+
+msgid "Vous n'avez pas l'autorisation d'accéder à cet endroit"
+msgstr "您无权访问此地方"
+
+msgid "Cette valeur est déjà utilisée"
+msgstr "该值已被使用"
+
+msgid "Institution"
+msgstr "机构"
+
+msgid "Ville"
+msgstr "城市"
+
+msgid "Institutions"
+msgstr "机构"
+
+msgid "Villes"
+msgstr "城市"
 
 #: Template/Comptes/addctp:19
 msgid "Ajouter un compte banquaire"
 msgstr "添加银行帐户"
 
-#: Template/Comptes/addctp:21 Template/Comptes/editctp:28
-#: Template/Comptes/indexctp:22 Template/Comptes/indexctp:40
-#: Template/Comptes/viewctp:31
+#: Template/Comptes/addctp:21 Template/Comptes/editctp:28 Template/Comptes/indexctp:22 Template/Comptes/indexctp:40 Template/Comptes/viewctp:31
 msgid "Type de compte"
 msgstr "帐户类型"
 
@@ -124,8 +129,7 @@ msgstr "帐户类型"
 msgid "Nom du compte"
 msgstr "帐户名称"
 
-#: Template/Comptes/addctp:23 Template/Comptes/editctp:30
-#: Template/Comptes/indexctp:42 Template/Comptes/viewctp:33
+#: Template/Comptes/addctp:23 Template/Comptes/editctp:30 Template/Comptes/indexctp:42 Template/Comptes/viewctp:33
 msgid "Image"
 msgstr "形象"
 
@@ -133,8 +137,7 @@ msgstr "形象"
 msgid "Utilisateurs"
 msgstr "用户"
 
-#: Template/Comptes/addctp:28 Template/Comptes/editctp:34
-#: Template/Users/addctp:28 Template/Users/editctp:33
+#: Template/Comptes/addctp:28 Template/Comptes/editctp:34 Template/Users/addctp:28 Template/Users/editctp:33
 msgid "Soumettre"
 msgstr "提交"
 
@@ -142,8 +145,7 @@ msgstr "提交"
 msgid "Supprimer le compte"
 msgstr "删除帐户"
 
-#: Template/Comptes/editctp:13 Template/Comptes/indexctp:48
-#: Template/Comptes/viewctp:43
+#: Template/Comptes/editctp:13 Template/Comptes/indexctp:48 Template/Comptes/viewctp:43
 msgid "Voulez vous vraiment supprimer le compte # {0}?"
 msgstr "您确定要删除帐户＃{0}吗？"
 
@@ -167,8 +169,7 @@ msgstr "按帐户排序"
 msgid "Nom de compte"
 msgstr "帐户名称"
 
-#: Template/Comptes/indexctp:23 Template/Comptes/indexctp:43
-#: Template/Comptes/viewctp:34
+#: Template/Comptes/indexctp:23 Template/Comptes/indexctp:43 Template/Comptes/viewctp:34
 msgid "Date de création"
 msgstr "创作日期"
 
@@ -184,20 +185,15 @@ msgstr "账户"
 msgid "Balance"
 msgstr "天秤座"
 
-#: Template/Comptes/indexctp:46 Template/Comptes/viewctp:41
-#: Template/Users/indexctp:42 Template/Users/viewctp:38
+#: Template/Comptes/indexctp:46 Template/Comptes/viewctp:41 Template/Users/indexctp:42 Template/Users/viewctp:38
 msgid "Consulter"
 msgstr "请教"
 
-#: Template/Comptes/indexctp:47 Template/Comptes/viewctp:42
-#: Template/Transactions/indexctp:47 Template/Users/indexctp:43
-#: Template/Users/viewctp:39
+#: Template/Comptes/indexctp:47 Template/Comptes/viewctp:42 Template/Transactions/indexctp:47 Template/Users/indexctp:43 Template/Users/viewctp:39
 msgid "Modifier"
 msgstr "变化"
 
-#: Template/Comptes/indexctp:48 Template/Comptes/viewctp:43
-#: Template/Transactions/indexctp:48 Template/Users/indexctp:44
-#: Template/Users/viewctp:40
+#: Template/Comptes/indexctp:48 Template/Comptes/viewctp:43 Template/Transactions/indexctp:48 Template/Users/indexctp:44 Template/Users/viewctp:40
 msgid "Supprimer"
 msgstr "清除"
 
@@ -205,26 +201,20 @@ msgstr "清除"
 msgid "Debut"
 msgstr "出道"
 
-#: Template/Comptes/indexctp:58 Template/Transactions/indexctp:58
-#: Template/Users/indexctp:55
+#: Template/Comptes/indexctp:58 Template/Transactions/indexctp:58 Template/Users/indexctp:55
 msgid "Précédent"
 msgstr "前"
 
-#: Template/Comptes/indexctp:60 Template/Transactions/indexctp:60
-#: Template/Users/indexctp:57
+#: Template/Comptes/indexctp:60 Template/Transactions/indexctp:60 Template/Users/indexctp:57
 msgid "Suivant"
 msgstr "以下"
 
-#: Template/Comptes/indexctp:61 Template/Transactions/indexctp:61
-#: Template/Users/indexctp:58
+#: Template/Comptes/indexctp:61 Template/Transactions/indexctp:61 Template/Users/indexctp:58
 msgid "Dernier"
 msgstr "最后"
 
-#: Template/Comptes/indexctp:63 Template/Transactions/indexctp:63
-#: Template/Users/indexctp:60
-msgid ""
-"Page {{page}} de {{pages}}, {{current}} entrée(s) montrée(s) sur un total de "
-"{{count}}"
+#: Template/Comptes/indexctp:63 Template/Transactions/indexctp:63 Template/Users/indexctp:60
+msgid "Page {{page}} de {{pages}}, {{current}} entrée(s) montrée(s) sur un total de {{count}}"
 msgstr "{{pages}}页面{{page}}，{{current}}条目共显示{{count}}"
 
 #: Template/Comptes/viewctp:11
@@ -239,15 +229,11 @@ msgstr "删除银行帐户"
 msgid "Le mot de passe doit contenir au moins 5 caractères"
 msgstr "密码必须至少包含5个字符"
 
-#: Template/Comptes/viewctp:15 Template/Users/editctp:13
-#: Template/Users/indexctp:44 Template/Users/viewctp:14
-#: Template/Users/viewctp:40
+#: Template/Comptes/viewctp:15 Template/Users/editctp:13 Template/Users/indexctp:44 Template/Users/viewctp:14 Template/Users/viewctp:40
 msgid "Voulez vous vraiment supprimer l'utilisateur # {0}?"
 msgstr "您确定要删除用户＃{0}吗？"
 
-#: Template/Comptes/viewctp:19 Template/Transactions/addctp:12
-#: Template/Transactions/editctp:18 Template/Transactions/indexctp:12
-#: Template/Users/addctp:12 Template/Users/editctp:18 Template/Users/viewctp:20
+#: Template/Comptes/viewctp:19 Template/Transactions/addctp:12 Template/Transactions/editctp:18 Template/Transactions/indexctp:12 Template/Users/addctp:12 Template/Users/editctp:18 Template/Users/viewctp:20
 msgid "Ajouter un nouveau compte banquaire"
 msgstr "添加新的银行帐户"
 
@@ -279,8 +265,7 @@ msgstr " 断开"
 msgid "Connecter"
 msgstr "登录"
 
-#: Template/Layout/errorctp:35 Template/Error/error400ctp:36
-#: Template/Error/error500ctp:41
+#: Template/Layout/errorctp:35 Template/Error/error400ctp:36 Template/Error/error500ctp:41
 msgid "Error"
 msgstr ""
 
@@ -288,27 +273,20 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: Template/Messages/addctp:9 Template/Messages/editctp:9
-#: Template/Messages/indexctp:9 Template/Messages/indexctp:25
-#: Template/Messages/viewctp:9 Template/Messages/viewctp:55
-#: Template/Transactions/viewctp:9
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:41
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:151
+#: Template/Messages/addctp:9 Template/Messages/editctp:9 Template/Messages/indexctp:9 Template/Messages/indexctp:25 Template/Messages/viewctp:9 Template/Messages/viewctp:55 Template/Transactions/viewctp:9
+#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:41 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:151
 msgid "Actions"
 msgstr ""
 
-#: Template/Messages/addctp:10 Template/Messages/editctp:16
-#: Template/Messages/viewctp:12
+#: Template/Messages/addctp:10 Template/Messages/editctp:16 Template/Messages/viewctp:12
 msgid "List Messages"
 msgstr ""
 
-#: Template/Messages/addctp:11 Template/Messages/editctp:17
-#: Template/Messages/indexctp:11 Template/Messages/viewctp:14
+#: Template/Messages/addctp:11 Template/Messages/editctp:17 Template/Messages/indexctp:11 Template/Messages/viewctp:14
 msgid "List Users"
 msgstr ""
 
-#: Template/Messages/addctp:12 Template/Messages/editctp:18
-#: Template/Messages/indexctp:12 Template/Messages/viewctp:15
+#: Template/Messages/addctp:12 Template/Messages/editctp:18 Template/Messages/indexctp:12 Template/Messages/viewctp:15
 msgid "New User"
 msgstr ""
 
@@ -316,27 +294,18 @@ msgstr ""
 msgid "Add Message"
 msgstr ""
 
-#: Template/Messages/addctp:25 Template/Messages/editctp:31
-#: View/Helper/FormHelperphp:2030
+#: Template/Messages/addctp:25 Template/Messages/editctp:31 View/Helper/FormHelperphp:2030
 msgid "Submit"
 msgstr ""
 
-#: Template/Messages/editctp:11 Template/Messages/indexctp:39
-#: Template/Messages/viewctp:70 Template/Transactions/editctp:11
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Element/formctp:22
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:81
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:164
+#: Template/Messages/editctp:11 Template/Messages/indexctp:39 Template/Messages/viewctp:70 Template/Transactions/editctp:11 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Element/formctp:22
+#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:81 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:164
 msgid "Delete"
 msgstr ""
 
-#: Template/Messages/editctp:13 Template/Messages/indexctp:39
-#: Template/Messages/viewctp:11 Template/Messages/viewctp:70
-#: Template/Transactions/editctp:13 Template/Transactions/indexctp:48
-#: Template/Transactions/viewctp:11
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Element/formctp:25
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:81
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:53
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:164
+#: Template/Messages/editctp:13 Template/Messages/indexctp:39 Template/Messages/viewctp:11 Template/Messages/viewctp:70 Template/Transactions/editctp:13 Template/Transactions/indexctp:48 Template/Transactions/viewctp:11
+#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Element/formctp:25 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:81
+#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:53 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:164
 msgid "Are you sure you want to delete # {0}?"
 msgstr ""
 
@@ -355,16 +324,36 @@ msgstr "消息"
 msgid "Images"
 msgstr "图片"
 
-#: Template/Messages/indexctp:37 Template/Messages/viewctp:68
-#: View/Helper/PaginatorHelperphp:1258
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:79
+msgid "Votre compte est maintenant confirmé! Veuillez vous reconnecter pour avoir accès à votre compte."
+msgstr "您的帐户现已确认！请再次登录以访问您的帐户"
+
+msgid "Un lien de confirmation a été envoyé."
+msgstr "确认链接已发送"
+
+msgid "Vous n'avez pas confirmé votre adresse courriel, la majorité des fonctionnalités du site sont alors indisponibles. Vous avez seulement accès aux informations de votre compte utilisateur. Un bouton est disponible ci-dessous pour envoyer le lien à nouveau si vous ne l'avez pas recu."
+msgstr "您尚未确认您的电子邮件地址，因此该网站的大多数功能均不可用。您只能访问您的用户帐户信息。如果您尚未收到链接，则可以使用下面的按钮再次发送链接"
+
+msgid "Vous avez presque fini!"
+msgstr "你几乎完成"
+
+msgid "Un courriel de confirmation a été envoyé à votre adresse courriel. Veuillez cliquer sur le lien présent dans ce courriel pour avoir accès aux fonctionalités du site!"
+msgstr "确认电子邮件已发送到您的电子邮件地址。请单击该链接以访问该网站的所有功能!"
+
+msgid "Renvoyer le lien de confirmation"
+msgstr "重新发送确认链接"
+
+msgid "Virements"
+msgstr "转让"
+
+msgid "À propos"
+msgstr "关于"
+
+#: Template/Messages/indexctp:37 Template/Messages/viewctp:68 View/Helper/PaginatorHelperphp:1258 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:79
 #: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:162
 msgid "View"
 msgstr ""
 
-#: Template/Messages/indexctp:38 Template/Messages/viewctp:69
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:80
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:163
+#: Template/Messages/indexctp:38 Template/Messages/viewctp:69 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:80 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:163
 msgid "Edit"
 msgstr ""
 
@@ -372,13 +361,11 @@ msgstr ""
 msgid "first"
 msgstr ""
 
-#: Template/Messages/indexctp:48
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:89
+#: Template/Messages/indexctp:48 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:89
 msgid "previous"
 msgstr ""
 
-#: Template/Messages/indexctp:50
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:91
+#: Template/Messages/indexctp:50 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:91
 msgid "next"
 msgstr ""
 
@@ -387,9 +374,7 @@ msgid "last"
 msgstr ""
 
 #: Template/Messages/indexctp:53
-msgid ""
-"Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} "
-"total"
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
 msgstr ""
 
 #: Template/Messages/viewctp:11
@@ -400,19 +385,15 @@ msgstr ""
 msgid "Titre"
 msgstr ""
 
-#: Template/Messages/viewctp:26
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/log_panelctp:29
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/timer_panelctp:32
+#: Template/Messages/viewctp:26 C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/log_panelctp:29 C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/timer_panelctp:32
 msgid "Message"
 msgstr ""
 
-#: Template/Messages/viewctp:30 Template/Messages/viewctp:47
-#: Template/Transactions/viewctp:34
+#: Template/Messages/viewctp:30 Template/Messages/viewctp:47 Template/Transactions/viewctp:34
 msgid "Id"
 msgstr ""
 
-#: Template/Messages/viewctp:34 Template/Messages/viewctp:53
-#: Template/Transactions/viewctp:42
+#: Template/Messages/viewctp:34 Template/Messages/viewctp:53 Template/Transactions/viewctp:42
 msgid "Created"
 msgstr ""
 
@@ -424,9 +405,7 @@ msgstr ""
 msgid "Related Users"
 msgstr ""
 
-#: Template/Messages/viewctp:48
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/packages_panelctp:36
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/packages_panelctp:62
+#: Template/Messages/viewctp:48 C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/packages_panelctp:36 C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/packages_panelctp:62
 msgid "Name"
 msgstr ""
 
@@ -502,14 +481,11 @@ msgstr ""
 msgid "Montant"
 msgstr ""
 
-#: Template/Users/addctp:22 Template/Users/editctp:27
-#: Template/Users/indexctp:20
+#: Template/Users/addctp:22 Template/Users/editctp:27 Template/Users/indexctp:20
 msgid "Nom"
 msgstr "帐户名称"
 
-#: Template/Users/addctp:23 Template/Users/editctp:28
-#: Template/Users/indexctp:21 Template/Users/indexctp:37
-#: Template/Users/viewctp:30
+#: Template/Users/addctp:23 Template/Users/editctp:28 Template/Users/indexctp:21 Template/Users/indexctp:37 Template/Users/viewctp:30
 msgid "Nom d'utilisateur"
 msgstr "用户名"
 
@@ -537,8 +513,7 @@ msgstr "编辑用户"
 msgid "Trier les utilisateurs par"
 msgstr "按用户排序"
 
-#: Template/Users/indexctp:22 Template/Users/indexctp:38
-#: Template/Users/loginctp:4 Template/Users/viewctp:31
+#: Template/Users/indexctp:22 Template/Users/indexctp:38 Template/Users/loginctp:4 Template/Users/viewctp:31
 msgid "Courriel"
 msgstr "电子邮件"
 
@@ -557,15 +532,11 @@ msgstr "相关帐户"
 msgid "Ajouter une image de compte"
 msgstr "添加帐户图片"
 
-
-
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Element/formctp:30
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:54
+#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Element/formctp:30 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:54
 msgid "List <%= $pluralHumanName %>"
 msgstr ""
 
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Element/formctp:37
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:61
+#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Element/formctp:37 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:61
 msgid "List <%= $this->_pluralHumanName($alias) %>"
 msgstr ""
 
@@ -577,8 +548,7 @@ msgstr ""
 msgid "<%= Inflector::humanize($action) %> {0}"
 msgstr ""
 
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:10
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:55
+#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:10 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:55
 msgid "New <%= $singularHumanName %>"
 msgstr ""
 
@@ -586,11 +556,8 @@ msgstr ""
 msgid "List <%= Inflector::humanize($details[\"controller\"]) %>"
 msgstr ""
 
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:18
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:62
-msgid ""
-"New <%= Inflector::humanize(Inflector::singularize(Inflector::"
-"underscore($alias))) %>"
+#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/indexctp:18 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:62
+msgid "New <%= Inflector::humanize(Inflector::singularize(Inflector::underscore($alias))) %>"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:52
@@ -605,10 +572,8 @@ msgstr ""
 msgid "<%= Inflector::humanize($details["
 msgstr ""
 
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:92
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:101
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:117
-#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:125
+#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:92 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:101
+#: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:117 C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:125
 #: C:/xampp/htdocs/cakebanque/vendor/friendsofcake/bootstrap-ui/src/Template/Bake/Template/viewctp:149
 msgid "<%= Inflector::humanize($field) %>"
 msgstr ""
@@ -653,13 +618,11 @@ msgstr ""
 msgid "You are not authorized to access that location."
 msgstr ""
 
-#: Controller/Component/CsrfComponentphp:182
-#: Http/Middleware/CsrfProtectionMiddlewarephp:227
+#: Controller/Component/CsrfComponentphp:182 Http/Middleware/CsrfProtectionMiddlewarephp:227
 msgid "Missing CSRF token cookie"
 msgstr ""
 
-#: Controller/Component/CsrfComponentphp:186
-#: Http/Middleware/CsrfProtectionMiddlewarephp:231
+#: Controller/Component/CsrfComponentphp:186 Http/Middleware/CsrfProtectionMiddlewarephp:231
 msgid "CSRF token mismatch."
 msgstr ""
 
@@ -788,26 +751,22 @@ msgstr ""
 msgid "on %s"
 msgstr ""
 
-#: I18n/RelativeTimeFormatterphp:47 I18n/RelativeTimeFormatterphp:126
-#: I18n/RelativeTimeFormatterphp:316
+#: I18n/RelativeTimeFormatterphp:47 I18n/RelativeTimeFormatterphp:126 I18n/RelativeTimeFormatterphp:316
 msgid "{0} year"
 msgid_plural "{0} years"
 msgstr[0] ""
 
-#: I18n/RelativeTimeFormatterphp:51 I18n/RelativeTimeFormatterphp:129
-#: I18n/RelativeTimeFormatterphp:319
+#: I18n/RelativeTimeFormatterphp:51 I18n/RelativeTimeFormatterphp:129 I18n/RelativeTimeFormatterphp:319
 msgid "{0} month"
 msgid_plural "{0} months"
 msgstr[0] ""
 
-#: I18n/RelativeTimeFormatterphp:57 I18n/RelativeTimeFormatterphp:132
-#: I18n/RelativeTimeFormatterphp:322
+#: I18n/RelativeTimeFormatterphp:57 I18n/RelativeTimeFormatterphp:132 I18n/RelativeTimeFormatterphp:322
 msgid "{0} week"
 msgid_plural "{0} weeks"
 msgstr[0] ""
 
-#: I18n/RelativeTimeFormatterphp:59 I18n/RelativeTimeFormatterphp:135
-#: I18n/RelativeTimeFormatterphp:325
+#: I18n/RelativeTimeFormatterphp:59 I18n/RelativeTimeFormatterphp:135 I18n/RelativeTimeFormatterphp:325
 msgid "{0} day"
 msgid_plural "{0} days"
 msgstr[0] ""
@@ -940,9 +899,7 @@ msgid "Invalid cache engine name."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Controller/Component/ToolbarComponentphp:42
-msgid ""
-"{0} is now loaded through plugin bootstrapping. Make sure you have {1} in "
-"your application's {2}."
+msgid "{0} is now loaded through plugin bootstrapping. Make sure you have {1} in your application's {2}."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Model/Table/PanelsTablephp:59
@@ -961,19 +918,15 @@ msgstr ""
 msgid "Controller action start"
 msgstr ""
 
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:63
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:68
+#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:63 C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:68
 msgid "Controller action"
 msgstr ""
 
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:73
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:74
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:94
+#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:73 C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:74 C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:94
 msgid "View Render start"
 msgstr ""
 
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:83
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:88
+#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:83 C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Panel/TimerPanelphp:88
 msgid "Render {0}"
 msgstr ""
 
@@ -1022,9 +975,7 @@ msgid "Longest/shortest request: :longest sec/:shortest sec"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:147
-msgid ""
-"Allows you to obtain some rough benchmarking statisticsabout a fully "
-"qualified URL."
+msgid "Allows you to obtain some rough benchmarking statisticsabout a fully qualified URL."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:153
@@ -1036,15 +987,11 @@ msgid "Number of iterations to perform."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:162
-msgid ""
-"Maximum total time for all iterations, in seconds.If a single iteration "
-"takes more than the timeout, only one request will be made"
+msgid "Maximum total time for all iterations, in seconds.If a single iteration takes more than the timeout, only one request will be made"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Shell/BenchmarkShellphp:168
-msgid ""
-"Example Use: `cake benchmark --n 10 --t 100 http://localhost/testsite`. "
-"<info>Note:</info> this benchmark does not include browser render times."
+msgid "Example Use: `cake benchmark --n 10 --t 100 http://localhost/testsite`. <info>Note:</info> this benchmark does not include browser render times."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Shell/WhitespaceShellphp:98
@@ -1083,16 +1030,13 @@ msgstr ""
 msgid "Application Constants"
 msgstr ""
 
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:34
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:59
+#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:34 C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:59
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:135
 msgid "Constant"
 msgstr ""
 
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:35
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:60
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:110
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:136
+#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:35 C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:60
+#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:110 C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/environment_panelctp:136
 msgid "Value"
 msgstr ""
 
@@ -1144,8 +1088,7 @@ msgstr ""
 msgid "previous requests available"
 msgstr ""
 
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/history_panelctp:29
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/history_panelctp:53
+#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/history_panelctp:29 C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/history_panelctp:53
 msgid "Back to current request"
 msgstr ""
 
@@ -1201,8 +1144,7 @@ msgstr ""
 msgid "Requirements ({0})"
 msgstr ""
 
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/packages_panelctp:37
-#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/packages_panelctp:63
+#: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/packages_panelctp:37 C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/Element/packages_panelctp:63
 msgid "Version"
 msgstr ""
 
@@ -1347,15 +1289,11 @@ msgid "Testing emails can be very time consuming"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:31
-msgid ""
-"Specially when you need to click a bunch of times on an interface to trigger "
-"them."
+msgid "Specially when you need to click a bunch of times on an interface to trigger them."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:32
-msgid ""
-"Wouldn't it be better to just change the templates and refresh the browser "
-"to see the result?"
+msgid "Wouldn't it be better to just change the templates and refresh the browser to see the result?"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:33
@@ -1367,8 +1305,7 @@ msgid "Example"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:36
-msgid ""
-"{0} integrates with CakePHP’s {1} class. Here's an example of such a mailer:"
+msgid "{0} integrates with CakePHP’s {1} class. Here's an example of such a mailer:"
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:50
@@ -1388,9 +1325,7 @@ msgid "Note that the function MUST return the UserMailer object at the end."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:88
-msgid ""
-"Since {0} have a fluent interface, you just need to return the result of the "
-"chain of calls."
+msgid "Since {0} have a fluent interface, you just need to return the result of the chain of calls."
 msgstr ""
 
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/Template/MailPreview/indexctp:89
@@ -1404,5 +1339,3 @@ msgstr ""
 #: C:/xampp/htdocs/cakebanque/vendor/cakephp/debug_kit/src/View/Helper/TidyHelperphp:110
 msgid "No markup errors found"
 msgstr ""
-
-
